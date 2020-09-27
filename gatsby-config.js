@@ -31,7 +31,6 @@ module.exports = {
 			resolve: `gatsby-plugin-styled-components`,
 		},
 		`gatsby-plugin-offline`,
-		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-netlify`, // Must be last
 	],
