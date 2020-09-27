@@ -1,42 +1,102 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+import colors from '../helpers/colors'
+import Logo from '../components/logo.js'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Header = ({ siteTitle, color }) => (
+	<HeaderWrapper>
+		<LinkContainer>
+			<Link to='/about'>About</Link>
+		</LinkContainer>
+		<LinkContainer>
+			<Link to='/services'>Services</Link>
+		</LinkContainer>
+		<LogoWrapper to='/'>
+			<Logo color={color} />
+		</LogoWrapper>
+		<LinkContainer>
+			<Link to='/tech'>Tech</Link>
+		</LinkContainer>
+		<LinkContainer>
+			<Link to='/projects'>Projects</Link>
+		</LinkContainer>
+	</HeaderWrapper>
 )
 
+const HeaderWrapper = styled.header`
+	justify-self: flex-start;
+	display: grid;
+	grid-template-columns: repeat(5, fit-content(25ch));
+	grid-gap: 5vw;
+	justify-content: center;
+	width: 80%;
+	color: ${colors.white};
+	text-align: center;
+	margin: 0 auto;
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		grid-gap: 2vw;
+	}
+`
+
+const LogoWrapper = styled(Link)`
+	background: ${colors.white};
+	width: 5rem;
+	height: 5rem;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@media only screen and (max-width: 768px) {
+		width: 4rem;
+		height: 4rem;
+	}
+	@media only screen and (max-width: 600px) {
+		width: 3rem;
+		height: 3rem;
+	}
+`
+
+const LinkContainer = styled.div`
+	margin-top: 0.75rem;
+	& * {
+		position: relative;
+		text-decoration: none;
+		font-size: 1.5rem;
+		overflow: hidden;
+		@media only screen and (max-width: 600px) {
+			font-size: 1.25rem;
+		}
+		@media only screen and (max-width: 350px) {
+			font-size: 1.1rem;
+		}
+		&::after {
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			content: '';
+			height: 2px;
+			width: 100%;
+			transform: scale(0);
+			transition: transform 350ms;
+			background: ${colors.white};
+		}
+		&:hover {
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+`
+
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+	siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+	siteTitle: ``,
 }
 
 export default Header
