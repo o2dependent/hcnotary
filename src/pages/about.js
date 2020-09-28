@@ -39,7 +39,7 @@ const AboutPage = ({ data }) => {
 				</GridContainer>
 				<AsideThrow
 					style={{ top: `20%` }}
-					initial={{ x: `200%`, rotate: -15 }}
+					initial={{ x: `200%`, rotate: -30 }}
 					animate={{ x: 0, rotate: 0 }}
 					transition={{ duration: 2, type: 'spring' }}
 				>
