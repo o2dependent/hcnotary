@@ -23,18 +23,6 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: `Ethan Olsen`,
-				short_name: `eolsen`,
-				start_url: `/`,
-				background_color: `#1F1521`,
-				theme_color: `#1F1521`,
-				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-			},
-		},
-		{
 			resolve: `gatsby-plugin-styled-components`,
 		},
 		{
@@ -52,7 +40,6 @@ module.exports = {
 				plugins: [],
 			},
 		},
-		// `gatsby-plugin-offline`,
 		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-netlify`, // Must be last
