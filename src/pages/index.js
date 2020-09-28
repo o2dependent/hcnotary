@@ -1,40 +1,50 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import MockPage from '../components/mockPage'
+import MockPage from '../components/mockPage/mockPage'
 import SEO from '../components/seo'
-import colors from '../helpers/colors'
 import {
 	Button,
-	PageContent,
-	PageTitle,
+	Content,
 	GridContainer,
 	Container,
 } from '../components/pageComponents'
+import { graphql } from 'gatsby'
 
-const color = colors.orange
+const IndexPage = ({ data }) => {
+	const { markdownRemark } = data
+	const { html } = markdownRemark
+	const color = markdownRemark.frontmatter.color
 
-const IndexPage = () => (
-	<Layout color={color}>
-		<SEO title='Home' />
-		<Container>
-			<GridContainer
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5 }}
-			>
-				<PageTitle>Web Development made easy</PageTitle>
-				<PageContent>
-					Our team of dedicated developers are always ready to add, fix, and
-					maintain features on your site,
-				</PageContent>
-				<Button color={color} to='/about'>
-					About Us
-				</Button>
-			</GridContainer>
-			<MockPage />
-		</Container>
-	</Layout>
-)
+	return (
+		<Layout color={color}>
+			<SEO title='Home' />
+			<Container>
+				<GridContainer
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.5 }}
+				>
+					<Content dangerouslySetInnerHTML={{ __html: html }} />
+					<Button color={color} to='/about'>
+						About Me
+					</Button>
+				</GridContainer>
+				<MockPage color={color} />
+			</Container>
+		</Layout>
+	)
+}
+
+export const data = graphql`
+	query IndexContentQuery {
+		markdownRemark(frontmatter: { page: { eq: "index" } }) {
+			html
+			frontmatter {
+				color
+			}
+		}
+	}
+`
 
 export default IndexPage

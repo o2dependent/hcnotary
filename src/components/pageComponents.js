@@ -21,33 +21,35 @@ const Container = styled.div`
 const GridContainer = styled(motion.div)`
 	height: 100%;
 	width: 100%;
-	margin-top: 20%;
 	@media only screen and (max-width: 768px) {
 		z-index: 1;
+		margin-top: 20%;
 	}
 `
 
-const PageTitle = styled.h1`
-	font-weight: 300;
-	font-size: 3rem;
-	margin-bottom: 2rem;
-	@media only screen and (max-width: 600px) {
-		font-size: 1.75rem;
+const Content = styled.div`
+	& h1 {
+		font-weight: 300;
+		font-size: 3rem;
+		margin-bottom: 2rem;
+		@media only screen and (max-width: 600px) {
+			font-size: 1.75rem;
+		}
 	}
-`
-
-const PageContent = styled.p`
-	margin-bottom: 2rem;
-	line-height: 2.2rem;
-	width: 80%;
-	font-size: 1.5rem;
-	@media only screen and (max-width: 600px) {
-		font-size: 1.1rem;
-		width: 100%;
+	& p {
+		margin-bottom: 2rem;
+		line-height: 2.2rem;
+		width: 80%;
+		font-size: 1.5rem;
+		@media only screen and (max-width: 600px) {
+			font-size: 1.1rem;
+			width: 100%;
+		}
 	}
 `
 
 const Button = styled(Link)`
+	width: fit-content;
 	background: ${colors.white};
 	color: ${props => props.color};
 	text-decoration: none;
@@ -60,4 +62,10 @@ const Button = styled(Link)`
 	}
 `
 
-export { Button, PageContent, PageTitle, GridContainer, Container }
+const ButtonGrid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 80%;
+`
+
+export { Button, GridContainer, Container, Content, ButtonGrid }

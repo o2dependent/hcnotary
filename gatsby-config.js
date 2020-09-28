@@ -9,8 +9,15 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `images`,
+				name: `markdown`,
+				path: `${__dirname}/src/markdown`,
+			},
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
 				path: `${__dirname}/src/images`,
+				name: 'images',
 			},
 		},
 		`gatsby-transformer-sharp`,
@@ -30,7 +37,23 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-styled-components`,
 		},
-		`gatsby-plugin-offline`,
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				// CommonMark mode (default: true)
+				commonmark: true,
+				// Footnotes mode (default: true)
+				footnotes: true,
+				// Pedantic mode (default: true)
+				pedantic: true,
+				// GitHub Flavored Markdown mode (default: true)
+				gfm: true,
+				// Plugins configs
+				plugins: [],
+			},
+		},
+		// `gatsby-plugin-offline`,
+		`gatsby-plugin-netlify-cms`,
 		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-netlify`, // Must be last
 	],
