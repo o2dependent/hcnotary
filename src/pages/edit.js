@@ -51,8 +51,8 @@ const AboutPage = ({ data }) => {
 }
 
 export const data = graphql`
-	query AboutContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "about" } }) {
+	query EditContentQuery {
+		markdownRemark(frontmatter: { page: { eq: "edit" } }) {
 			html
 			frontmatter {
 				color

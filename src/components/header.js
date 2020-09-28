@@ -17,10 +17,10 @@ const Header = ({ siteTitle, color }) => (
 			<Logo color={color} />
 		</LogoWrapper>
 		<LinkContainer>
-			<Link to='/tech'>Tech</Link>
+			<Link to='/edit'>Edit</Link>
 		</LinkContainer>
 		<LinkContainer>
-			<Link to='/projects'>Projects</Link>
+			<Link to='/contact'>Contact</Link>
 		</LinkContainer>
 	</HeaderWrapper>
 )
