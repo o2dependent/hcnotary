@@ -8,6 +8,7 @@ import {
 	GridContainer,
 	Container,
 	ButtonGrid,
+	AsideThrow,
 } from '../components/pageComponents'
 import { graphql } from 'gatsby'
 import Polaroid from '../components/polaroid'
@@ -36,7 +37,14 @@ const AboutPage = ({ data }) => {
 						</Button>
 					</ButtonGrid>
 				</GridContainer>
-				<Polaroid />
+				<AsideThrow
+					style={{ top: `20%` }}
+					initial={{ x: `200%`, rotate: -15 }}
+					animate={{ x: 0, rotate: 0 }}
+					transition={{ duration: 2, type: 'spring' }}
+				>
+					<Polaroid />
+				</AsideThrow>
 			</Container>
 		</Layout>
 	)

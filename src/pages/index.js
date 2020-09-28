@@ -8,6 +8,7 @@ import {
 	Content,
 	GridContainer,
 	Container,
+	AsideThrow,
 } from '../components/pageComponents'
 import { graphql } from 'gatsby'
 
@@ -30,7 +31,13 @@ const IndexPage = ({ data }) => {
 						About Me
 					</Button>
 				</GridContainer>
-				<MockPage color={color} />
+				<AsideThrow
+					initial={{ x: `200%`, rotate: -15 }}
+					animate={{ x: 0, rotate: 0 }}
+					transition={{ duration: 2, type: 'spring' }}
+				>
+					<MockPage color={color} />
+				</AsideThrow>
 			</Container>
 		</Layout>
 	)

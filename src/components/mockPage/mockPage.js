@@ -10,11 +10,7 @@ let pageColor = '#FFF'
 export default function MockPage({ color }) {
 	pageColor = color
 	return (
-		<MockPageContainer
-			initial={{ x: `200%`, rotate: -15 }}
-			animate={{ x: 0, rotate: 0 }}
-			transition={{ duration: 2, type: 'spring' }}
-		>
+		<MockPageContainer>
 			<MockText num={7} delay={0.05} dark />
 			<MockGraph num={5} />
 			<Box
@@ -40,16 +36,6 @@ const MockPageContainer = styled(motion.div)`
 	grid-template-rows: 1.5fr 1fr;
 	justify-content: center;
 	overflow: hidden;
-	@media only screen and (max-width: 768px) {
-		width: 116%;
-		height: 90%;
-		max-height: 90%;
-		position: absolute;
-		top: 0;
-		left: -8%;
-		opacity: 0.2;
-		grid-template-rows: 1fr 1fr;
-	}
 `
 
 const TitleBar = styled(motion.div)`
