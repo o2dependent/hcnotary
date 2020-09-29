@@ -3,6 +3,6 @@ page: 'services'
 color: '#F86C4D'
 ---
 
-#Hello from About
+#Hello from Services
 
-This is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body
+This is body text services

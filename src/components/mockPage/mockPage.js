@@ -36,6 +36,7 @@ const MockPageContainer = styled(motion.div)`
 	grid-template-rows: 1.5fr 1fr;
 	justify-content: center;
 	overflow: hidden;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const TitleBar = styled(motion.div)`

@@ -38,7 +38,7 @@ const AboutPage = ({ data }) => {
 					</ButtonGrid>
 				</GridContainer>
 				<AsideThrow
-					style={{ top: `20%` }}
+					style={{ top: `10%` }}
 					initial={{ x: `200%`, rotate: -30 }}
 					animate={{ x: 0, rotate: 0 }}
 					transition={{ duration: 2, type: 'spring' }}

@@ -32,8 +32,8 @@ const IndexPage = ({ data }) => {
 					</Button>
 				</GridContainer>
 				<AsideThrow
-					initial={{ x: `200%`, rotate: -15 }}
-					animate={{ x: 0, rotate: 0 }}
+					initial={{ y: `200%`, rotate: 25 }}
+					animate={{ y: 0, rotate: 0 }}
 					transition={{ duration: 2, type: 'spring' }}
 				>
 					<MockPage color={color} />

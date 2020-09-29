@@ -57,6 +57,12 @@ const Button = styled(Link)`
 	font-size: 1.5rem;
 	border-radius: 4px;
 	padding: 0.5rem 1rem;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+	transition: box-shadow 250ms, transform 250ms;
+	&:hover {
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+		transform: translate(0, 1px);
+	}
 	@media only screen and (max-width: 600px) {
 		font-size: 1.1rem;
 	}
