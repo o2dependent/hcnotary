@@ -1,8 +1,7 @@
 ---
-page: 'index'
-color: '#F67D63'
+page: index
+color: "#F67D63"
 ---
-
-#Hello from Index
+# Hello, I am Micheala.
 
 This is body text in index.md
