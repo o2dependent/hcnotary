@@ -1,4 +1,4 @@
 ---
 image: /img/code-tutor.jpg
-title: A title
+title: A new title
 ---
