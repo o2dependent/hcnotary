@@ -1,6 +1,6 @@
 ---
 page: 'contact'
-color: '#EDAE49'
+color: '#ED9E35'
 ---
 
 #Hello from contact

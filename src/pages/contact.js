@@ -3,7 +3,6 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import { Button } from '../components/pageComponents'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../helpers/colors'
@@ -16,25 +15,70 @@ const AboutPage = ({ data }) => {
 	return (
 		<Layout color={color}>
 			<SEO title='Contact' />
-			<ContactContainer
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5 }}
-			>
-				<ContactContent dangerouslySetInnerHTML={{ __html: html }} />
+			<ContactContainer>
+				<ContactContent
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.5 }}
+					dangerouslySetInnerHTML={{ __html: html }}
+				/>
 				<Form>
-					<TextInput type='text' placeholder='Name' />
-					<TextInput type='text' placeholder='Email' />
-					<TextField placeholder='Message' />
-					<SubmitButton color={color}>Submit!</SubmitButton>
+					<TextInput
+						initial={{ x: '-100vw' }}
+						animate={{ x: 0 }}
+						transition={{ type: 'spring', bounce: 0.15 }}
+						type='text'
+						placeholder='Name'
+					/>
+					<TextInput
+						initial={{ x: '100vw' }}
+						animate={{ x: 0 }}
+						transition={{ type: 'spring', bounce: 0.15 }}
+						type='text'
+						placeholder='Email'
+					/>
+					<TextField
+						initial={{ y: '100vh' }}
+						animate={{ y: 0 }}
+						transition={{ type: 'spring', bounce: 0.15 }}
+						placeholder='Message'
+					/>
+					<Button
+						initial={{ y: '100vh' }}
+						animate={{ y: 0 }}
+						transition={{ type: 'spring', bounce: 0.2 }}
+						color={color}
+					>
+						Submit!
+					</Button>
 				</Form>
 			</ContactContainer>
 		</Layout>
 	)
 }
-const SubmitButton = styled(Button)`
+const Button = styled(motion.button)`
 	grid-area: 3 / 1 / 3 / 4;
+	cursor: pointer;
 	margin: 0 auto;
+	width: fit-content;
+	background: ${colors.white};
+	color: ${props => props.color};
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1.5rem;
+	border-radius: 4px;
+	padding: 0.5rem 1rem;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+	outline: none;
+	border: none;
+	&:hover {
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+		transform: translate(0, 1px);
+		transition: box-shadow 250ms, transform 250ms;
+	}
+	@media only screen and (max-width: 600px) {
+		font-size: 1.1rem;
+	}
 `
 
 const ContactContainer = styled(motion.div)`
@@ -85,6 +129,7 @@ const Form = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-row-gap: 6vh;
+	font-size: 1.25rem;
 	@media only screen and (max-width: 1060px) {
 		width: 100%;
 	}
@@ -93,7 +138,7 @@ const Form = styled.form`
 	}
 `
 
-const TextInput = styled.input`
+const TextInput = styled(motion.input)`
 	padding-top: 0.5rem;
 	width: 80%;
 	margin: 0 auto;
@@ -104,13 +149,12 @@ const TextInput = styled.input`
 	&:focus {
 		outline-color: ${colors.white}80;
 	}
-
 	@media only screen and (max-width: 1060px) {
 		width: 90%;
 	}
 `
 
-const TextField = styled.textarea`
+const TextField = styled(motion.textarea)`
 	grid-area: 2 / 1 / 2 / 4;
 	padding-top: 0.5rem;
 	width: 90%;
@@ -124,7 +168,7 @@ const TextField = styled.textarea`
 		outline-color: ${colors.white}80;
 	}
 	@media only screen and (max-width: 1060px) {
-		width: 90%;
+		width: 95%;
 	}
 `
 

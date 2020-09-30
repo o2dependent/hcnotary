@@ -74,11 +74,6 @@ const ButtonGrid = styled.div`
 	grid-template-columns: 1fr 1fr;
 	width: 100%;
 	margin-bottom: 1rem;
-	/* @media only screen and (max-width: 1060px) {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
-		grid-gap: 1rem;
-	} */
 `
 
 const AsideThrow = styled(motion.div)`
