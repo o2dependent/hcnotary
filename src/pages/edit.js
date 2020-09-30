@@ -20,7 +20,7 @@ const AboutPage = ({ data }) => {
 
 	return (
 		<Layout color={color}>
-			<SEO title='Home' />
+			<SEO title='Edit' />
 			<Container>
 				<GridContainer
 					initial={{ opacity: 0 }}

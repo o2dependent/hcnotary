@@ -20,7 +20,7 @@ const AboutPage = ({ data }) => {
 
 	return (
 		<Layout color={color}>
-			<SEO title='Home' />
+			<SEO title='About' />
 			<Container>
 				<GridContainer
 					initial={{ opacity: 0 }}
@@ -30,10 +30,10 @@ const AboutPage = ({ data }) => {
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
 					<ButtonGrid>
 						<Button color={color} to='/services'>
-							See my services
+							My services
 						</Button>
 						<Button color={color} to='/contact'>
-							Contact Me
+							Contact
 						</Button>
 					</ButtonGrid>
 				</GridContainer>
