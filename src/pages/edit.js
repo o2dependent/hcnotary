@@ -2,53 +2,79 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import {
-	Button,
-	Content,
-	GridContainer,
-	Container,
-	ButtonGrid,
-	AsideThrow,
-} from '../components/pageComponents'
+import { Button, Content, ButtonGrid } from '../components/pageComponents'
 import { graphql } from 'gatsby'
 import Polaroid from '../components/polaroid'
+import styled from 'styled-components'
 
 const AboutPage = ({ data }) => {
-	const { markdownRemark } = data
+	const { markdownRemark, allMarkdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
+	const edits = allMarkdownRemark.edges
+	console.log(edits)
 
 	return (
 		<Layout color={color}>
 			<SEO title='Edit' />
 			<Container>
-				<GridContainer
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-				>
-					<Content dangerouslySetInnerHTML={{ __html: html }} />
-					<ButtonGrid>
-						<Button color={color} to='/services'>
-							See my services
-						</Button>
-						<Button color={color} to='/contact'>
-							Contact Me
-						</Button>
-					</ButtonGrid>
-				</GridContainer>
-				<AsideThrow
-					style={{ top: `20%` }}
-					initial={{ x: `200%`, rotate: -15 }}
-					animate={{ x: 0, rotate: 0 }}
-					transition={{ duration: 2, type: 'spring' }}
-				>
-					<Polaroid />
-				</AsideThrow>
+				<Content dangerouslySetInnerHTML={{ __html: html }} />
+				<ImageGrid color={color}>
+					{edits.map((e, i) => (
+						<Polaroid
+							src={e.node.frontmatter.image}
+							title={e.node.frontmatter.title}
+						/>
+					))}
+				</ImageGrid>
+				<ButtonGrid>
+					<Button color={color} to='/services'>
+						See my services
+					</Button>
+					<Button color={color} to='/contact'>
+						Contact Me
+					</Button>
+				</ButtonGrid>
 			</Container>
 		</Layout>
 	)
 }
+
+const Container = styled.div`
+	position: relative;
+	justify-self: center;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 100%;
+	margin: 5vh auto;
+	flex-grow: 1;
+	@media only screen and (max-width: 768px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+`
+
+const ImageGrid = styled.div`
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: 1rem;
+	margin-bottom: 1rem;
+	@media only screen and (max-width: 1060px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media only screen and (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+	& * {
+		color: ${props => props.color};
+		& p {
+			margin: 0;
+			margin-top: 0.5rem;
+			font-size: 1.25rem;
+		}
+	}
+`
 
 export const data = graphql`
 	query EditContentQuery {
@@ -56,6 +82,16 @@ export const data = graphql`
 			html
 			frontmatter {
 				color
+			}
+		}
+		allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/edits/" } }) {
+			edges {
+				node {
+					frontmatter {
+						title
+						image
+					}
+				}
 			}
 		}
 	}

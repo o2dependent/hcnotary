@@ -22,32 +22,39 @@ const AboutPage = ({ data }) => {
 					transition={{ duration: 0.5 }}
 					dangerouslySetInnerHTML={{ __html: html }}
 				/>
-				<Form>
+				<Form name='contact' method='post' action='/contact/success' netlify>
 					<TextInput
 						initial={{ x: '-100vw' }}
 						animate={{ x: 0 }}
-						transition={{ type: 'spring', bounce: 0.15 }}
+						transition={{ type: 'spring', bounce: 0.15, stiffness: 10000 }}
 						type='text'
+						id='name'
+						name='name'
 						placeholder='Name'
 					/>
 					<TextInput
 						initial={{ x: '100vw' }}
 						animate={{ x: 0 }}
-						transition={{ type: 'spring', bounce: 0.15 }}
+						transition={{ type: 'spring', bounce: 0.15, stiffness: 1000 }}
 						type='text'
+						id='email'
+						name='email'
 						placeholder='Email'
 					/>
 					<TextField
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
-						transition={{ type: 'spring', bounce: 0.15 }}
+						transition={{ type: 'spring', bounce: 0.15, stiffness: 1000 }}
+						id='message'
+						name='message'
 						placeholder='Message'
 					/>
 					<Button
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
-						transition={{ type: 'spring', bounce: 0.2 }}
+						transition={{ type: 'spring', bounce: 0.2, stiffness: 1000 }}
 						color={color}
+						type='submit'
 					>
 						Submit!
 					</Button>
@@ -92,8 +99,6 @@ const ContactContainer = styled(motion.div)`
 	width: 80%;
 	height: 100%;
 	margin: 5vh auto;
-	@media only screen and (max-width: 768px) {
-	}
 `
 
 const ContactContent = styled.div`

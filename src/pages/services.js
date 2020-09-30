@@ -21,7 +21,7 @@ const AboutPage = ({ data }) => {
 	const { markdownRemark, allMarkdownRemark } = data
 	const { html } = markdownRemark
 	color = markdownRemark.frontmatter.color
-	const services = allMarkdownRemark.edges[0].node.frontmatter.services
+	const services = allMarkdownRemark.edges
 	console.log(services)
 
 	return (
@@ -55,8 +55,8 @@ const AboutPage = ({ data }) => {
 								delay: 0.1 + 0.1 * i,
 							}}
 						>
-							<h1>{s.title}</h1>
-							<p>{s.body}</p>
+							<h1>{s.node.frontmatter.title}</h1>
+							<p>{s.node.frontmatter.content}</p>
 						</ServiceCard>
 					))}
 				</ServiceCardContainer>
@@ -103,7 +103,7 @@ const ServiceCard = style(motion.div)`
 	& p {
 		margin-bottom: 2rem;
 		line-height: 2.2rem;
-		width: 90%;
+		width: 100%;
 		font-size: 1.2rem;
 		margin: 0 auto;
 		color: ${props => props.color};
@@ -122,14 +122,15 @@ export const data = graphql`
 				color
 			}
 		}
-		allMarkdownRemark(filter: { frontmatter: { page: { eq: "services" } } }) {
+		allMarkdownRemark(
+			filter: { fileAbsolutePath: { regex: "/service-content/" } }
+		) {
 			edges {
 				node {
+					id
 					frontmatter {
-						services {
-							title
-							body
-						}
+						title
+						content
 					}
 				}
 			}

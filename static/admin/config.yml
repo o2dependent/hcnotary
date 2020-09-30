@@ -1,0 +1,31 @@
+backend:
+  name: github
+  branch: master
+  repo: o2dependent/ez-dev
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: content
+    label: Content
+    folder: src/markdown
+    create: false
+    fields:
+      - { label: Page, name: page, widget: string }
+      - { label: Color, name: color, widget: string }
+      - { label: Body, name: body, widget: markdown }
+  - name: services
+    label: Services
+    folder: src/markdown/service-content
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Content, name: content, widget: string }
+  - name: edits
+    label: Edits
+    folder: src/markdown/edits
+    create: true
+    fields:
+      - { label: Image, name: image, widget: image }
+      - { label: Title, name: title, widget: string }
