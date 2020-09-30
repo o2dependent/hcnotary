@@ -87,6 +87,7 @@ const Button = styled(motion.button)`
 	}
 	@media only screen and (max-width: 600px) {
 		font-size: 1.1rem;
+		grid-area: auto;
 	}
 `
 
@@ -173,6 +174,10 @@ const TextField = styled(motion.textarea)`
 	color: ${colors.white};
 	&:focus {
 		outline-color: ${colors.white}80;
+	}
+	@media only screen and (max-width: 600px) {
+		grid-area: auto;
+		width: 90% !important;
 	}
 	@media only screen and (max-width: 1060px) {
 		width: 95%;
