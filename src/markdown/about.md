@@ -1,8 +1,7 @@
 ---
-page: 'about'
-color: '#E86247'
+page: about
+color: "#E86247"
 ---
+# Hello, I am Micheala.
 
-#Hello from About
-
-This is body text in about.md
+This is text that describes me and introduces my skills.
