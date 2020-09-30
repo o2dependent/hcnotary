@@ -1,8 +1,7 @@
 ---
-page: 'edit'
-color: '#EA8848'
+page: edit
+color: "#EA8848"
 ---
+\#Hello from Edit
 
-#Hello from Edit
-
-This is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body text in about.mdThis is body
+This is body text in about.md. Stuff stuff stuff stuff
