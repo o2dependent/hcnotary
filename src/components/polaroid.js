@@ -14,7 +14,7 @@ export default function Polaroid({ src, title }) {
 }
 
 const Frame = styled(motion.div)`
-	width: 80%;
+	width: ${props => (props.title ? '100%' : '80%')};
 	height: fit-content;
 	padding: 2vmin;
 	padding-bottom: ${props => (props.title ? '10%' : '20%')};

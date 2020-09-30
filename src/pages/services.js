@@ -34,14 +34,14 @@ const AboutPage = ({ data }) => {
 					transition={{ duration: 0.5 }}
 				>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
-					<ButtonGrid>
+					<ButtonGridLarge>
 						<Button color={color} to='/edit'>
 							My edits
 						</Button>
 						<Button color={color} to='/contact'>
 							Contact Me
 						</Button>
-					</ButtonGrid>
+					</ButtonGridLarge>
 				</GridContainer>
 				<ServiceCardContainer>
 					{services.map((s, i) => (
@@ -60,10 +60,30 @@ const AboutPage = ({ data }) => {
 						</ServiceCard>
 					))}
 				</ServiceCardContainer>
+				<ButtonGridSmall>
+					<Button color={color} to='/edit'>
+						My edits
+					</Button>
+					<Button color={color} to='/contact'>
+						Contact Me
+					</Button>
+				</ButtonGridSmall>
 			</ServiceContainer>
 		</Layout>
 	)
 }
+
+const ButtonGridSmall = styled(ButtonGrid)`
+	@media only screen and (min-width: 768px) {
+		display: none;
+	}
+`
+
+const ButtonGridLarge = styled(ButtonGrid)`
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+`
 
 const ServiceContainer = styled(Container)`
 	@media only screen and (max-width: 768px) {

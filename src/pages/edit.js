@@ -6,6 +6,7 @@ import { Button, Content, ButtonGrid } from '../components/pageComponents'
 import { graphql } from 'gatsby'
 import Polaroid from '../components/polaroid'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 const AboutPage = ({ data }) => {
 	const { markdownRemark, allMarkdownRemark } = data
@@ -21,16 +22,24 @@ const AboutPage = ({ data }) => {
 				<Content dangerouslySetInnerHTML={{ __html: html }} />
 				<ImageGrid color={color}>
 					{edits.map((e, i) => (
-						<Polaroid
-							src={e.node.frontmatter.image}
-							title={e.node.frontmatter.title}
-						/>
+						<motion.div
+							initial={{ y: '100vh' }}
+							animate={{ y: 0 }}
+							transition={{
+								type: 'spring',
+								bounce: 0.25,
+								damping: 100,
+								delay: i * 0.05,
+							}}
+						>
+							<Polaroid
+								src={e.node.frontmatter.image}
+								title={e.node.frontmatter.title}
+							/>
+						</motion.div>
 					))}
 				</ImageGrid>
 				<ButtonGrid>
-					<Button color={color} to='/services'>
-						See my services
-					</Button>
 					<Button color={color} to='/contact'>
 						Contact Me
 					</Button>
@@ -58,7 +67,7 @@ const Container = styled.div`
 const ImageGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-row-gap: 1rem;
+	grid-gap: 1rem;
 	margin-bottom: 1rem;
 	@media only screen and (max-width: 1060px) {
 		grid-template-columns: repeat(2, 1fr);

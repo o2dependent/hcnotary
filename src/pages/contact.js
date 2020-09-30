@@ -31,6 +31,7 @@ const AboutPage = ({ data }) => {
 						id='name'
 						name='name'
 						placeholder='Name'
+						required
 					/>
 					<TextInput
 						initial={{ x: '100vw' }}
@@ -40,6 +41,7 @@ const AboutPage = ({ data }) => {
 						id='email'
 						name='email'
 						placeholder='Email'
+						required
 					/>
 					<TextField
 						initial={{ y: '100vh' }}
