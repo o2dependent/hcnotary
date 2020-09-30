@@ -2,6 +2,6 @@
 page: about
 color: "#E86247"
 ---
-# Hello, I am Micheala.
+# About.
 
 This is text that describes me and introduces my skills.
