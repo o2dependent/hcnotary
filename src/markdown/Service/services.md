@@ -1,6 +1,7 @@
 ---
-page: 'services'
-color: '#F86C4D'
+page: services
+title: Services Content
+color: "#F86C4D"
 ---
 
 #Hello from Services
