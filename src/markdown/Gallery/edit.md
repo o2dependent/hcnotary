@@ -1,6 +1,7 @@
 ---
 page: edit
-color: '#EA8848'
+title: Gallery Content
+color: "#EA8848"
 ---
 
 #Hello from Edit
