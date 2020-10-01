@@ -22,7 +22,13 @@ const AboutPage = ({ data }) => {
 					transition={{ duration: 0.5 }}
 					dangerouslySetInnerHTML={{ __html: html }}
 				/>
-				<Form name='contact' method='post' action='/contact/success' netlify>
+				<Form
+					name='contact'
+					method='POST'
+					action='/contact/success'
+					data-netlify='true'
+					netlify
+				>
 					<TextInput
 						initial={{ x: '-100vw' }}
 						animate={{ x: 0 }}
