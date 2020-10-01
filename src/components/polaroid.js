@@ -2,12 +2,11 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../helpers/colors'
-import aboutphoto from '../images/about-photo.jpg'
 
 export default function Polaroid({ src, title }) {
 	return (
 		<Frame title={title}>
-			<Img src={src || aboutphoto} />
+			<Img src={src} />
 			{title ? <p>{title}</p> : null}
 		</Frame>
 	)

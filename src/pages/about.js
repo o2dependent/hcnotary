@@ -17,6 +17,7 @@ const AboutPage = ({ data }) => {
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
+	const image = markdownRemark.frontmatter.image
 
 	return (
 		<Layout color={color}>
@@ -43,7 +44,7 @@ const AboutPage = ({ data }) => {
 					animate={{ x: 0, rotate: 0 }}
 					transition={{ duration: 2, type: 'spring' }}
 				>
-					<Polaroid />
+					<Polaroid src={image} />
 				</AsideThrow>
 			</Container>
 		</Layout>
@@ -56,6 +57,7 @@ export const data = graphql`
 			html
 			frontmatter {
 				color
+				image
 			}
 		}
 	}

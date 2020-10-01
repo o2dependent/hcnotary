@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master
   repo: o2dependent/ez-dev
 
@@ -7,25 +7,44 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: content
-    label: Content
-    folder: src/markdown
+  - name: index
+    label: Index
+    folder: src/markdown/Index
     create: false
     fields:
       - { label: Page, name: page, widget: string }
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
+  - name: about
+    label: About
+    folder: src/markdown/About
+    fields:
+      - { label: Color, name: color, widget: string }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Image, name: image, widget: image }
   - name: services
     label: Services
-    folder: src/markdown/service-content
+    folder: src/markdown/Services
+    fields:
+      - { label: Color, name: color, widget: string }
+      - { label: Body, name: body, widget: markdown }
+  - name: service-cards
+    label: Service Cards
+    folder: 'src/markdown/Service/Service Cards'
     create: true
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Content, name: content, widget: string }
-  - name: edits
-    label: Edits
-    folder: src/markdown/edits
+      - { label: Content, name: content, widget: markdown }
+  - name: gallery
+    label: Gallery
+    folder: src/markdown/Gallery
     create: true
     fields:
+      - { label: Color, name: color, widget: string }
+  - name: gallery-cards
+    label: Gallery Cards
+    folder: 'src/markdown/Gallery Cards'
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
       - { label: Image, name: image, widget: image }
-      - { label: Title, name: title, widget: string }
