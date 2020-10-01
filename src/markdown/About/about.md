@@ -1,6 +1,6 @@
 ---
 page: about
-title: About Content Settings
+title: About Content
 color: "#E86247"
 image: /img/code-tutor.jpg
 ---
