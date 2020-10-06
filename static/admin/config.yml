@@ -4,7 +4,7 @@ backend:
   repo: o2dependent/minimalist-template
 
 media_folder: static/img
-public_folder: ../../../img
+public_folder: ../../../static/img
 
 collections:
   - name: index
