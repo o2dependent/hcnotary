@@ -17,7 +17,7 @@ export default function MockPage({ color }) {
 				dark
 				initial={{ x: `-200%`, rotate: -95 }}
 				animate={{ x: 0, rotate: 0 }}
-				transition={{ duration: 2, delay: 0.15, type: 'spring' }}
+				transition={{ stiffness: 50, delay: 0.15, type: 'spring' }}
 			/>
 			<MockText num={5} delay={0.2} dark />
 		</MockPageContainer>

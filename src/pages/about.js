@@ -17,17 +17,14 @@ const AboutPage = ({ data }) => {
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
-	const image = markdownRemark.frontmatter.image
+	const fluid = markdownRemark.frontmatter.image.childImageSharp.fluid
+	console.log(data)
 
 	return (
 		<Layout color={color}>
 			<SEO title='About' />
 			<Container>
-				<GridContainer
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-				>
+				<GridContainer>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
 					<ButtonGrid>
 						<Button color={color} to='/services'>
@@ -39,12 +36,12 @@ const AboutPage = ({ data }) => {
 					</ButtonGrid>
 				</GridContainer>
 				<AsideThrow
-					style={{ top: `10%` }}
-					initial={{ x: `200%`, rotate: -30 }}
+					style={{ top: `5vh` }}
+					initial={{ x: `100vw`, rotate: -90 }}
 					animate={{ x: 0, rotate: 0 }}
-					transition={{ duration: 2, type: 'spring' }}
+					transition={{ stiffness: 50, dampening: 100, type: 'spring' }}
 				>
-					<Polaroid src={image} />
+					<Polaroid fluid={fluid} />
 				</AsideThrow>
 			</Container>
 		</Layout>
@@ -57,7 +54,13 @@ export const data = graphql`
 			html
 			frontmatter {
 				color
-				image
+				image {
+					childImageSharp {
+						fluid(maxWidth: 500) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 			}
 		}
 	}

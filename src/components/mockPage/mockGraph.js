@@ -16,7 +16,7 @@ export default function MockGraph({ num, delay }) {
 				initial={{ x: `200%`, rotate: 75 }}
 				animate={{ x: 0, rotate: 0 }}
 				transition={{
-					duration: 2,
+					stiffness: 50,
 					delay: 0.1,
 					type: 'spring',
 				}}
@@ -29,7 +29,7 @@ export default function MockGraph({ num, delay }) {
 							initial={{ height: 0 }}
 							animate={{ height: `${(i / num) * 100 + 5}%` }}
 							transition={{
-								duration: 0.75 + i / 10,
+								stiffness: 50,
 								delay: 0.5,
 								type: 'spring',
 							}}

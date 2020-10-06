@@ -15,7 +15,7 @@ const Container = styled.div`
 	flex-grow: 1;
 	@media only screen and (max-width: 768px) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 1fr;
 	}
 `
 
@@ -24,7 +24,7 @@ const GridContainer = styled(motion.div)`
 	width: 100%;
 	@media only screen and (max-width: 768px) {
 		z-index: 1;
-		margin-top: 20%;
+		margin-top: 10%;
 	}
 `
 
@@ -60,6 +60,7 @@ const Button = styled(Link)`
 	padding: 0.5rem 1rem;
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 	transition: box-shadow 250ms, transform 250ms;
+	margin-right: 3rem;
 	&:hover {
 		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
 		transform: translate(0, 1px);
@@ -69,9 +70,40 @@ const Button = styled(Link)`
 	}
 `
 
+const ButtonA = styled.a`
+	width: fit-content;
+	height: fit-content;
+	position: relative;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1rem;
+	border-radius: 4px;
+	padding: 0.5rem 0;
+	transition: box-shadow 250ms, transform 250ms;
+	margin-right: 3rem;
+	&:hover {
+		&::after {
+			height: 5px;
+			bottom: 3px;
+		}
+	}
+	&::after {
+		content: '';
+		width: 100%;
+		height: 1px;
+		position: absolute;
+		background: ${props => props.color};
+		bottom: 7px;
+		left: 0;
+		transition: 100ms;
+	}
+	@media only screen and (max-width: 600px) {
+		font-size: 1rem;
+	}
+`
+
 const ButtonGrid = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
 	width: 100%;
 	margin-bottom: 1rem;
 `
@@ -91,4 +123,12 @@ const AsideThrow = styled(motion.div)`
 	}
 `
 
-export { Button, GridContainer, Container, Content, ButtonGrid, AsideThrow }
+export {
+	Button,
+	ButtonA,
+	GridContainer,
+	Container,
+	Content,
+	ButtonGrid,
+	AsideThrow,
+}

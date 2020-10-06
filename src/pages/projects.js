@@ -8,12 +8,12 @@ import Polaroid from '../components/polaroid'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const AboutPage = ({ data }) => {
-	const { markdownRemark, allMarkdownRemark } = data
+const ProjectsPage = ({ data }) => {
+	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
-	const edits = allMarkdownRemark.edges
-	console.log(edits)
+	const projects = markdownRemark.frontmatter.projects
+	console.log(projects)
 
 	return (
 		<Layout color={color}>
@@ -21,7 +21,7 @@ const AboutPage = ({ data }) => {
 			<Container>
 				<Content dangerouslySetInnerHTML={{ __html: html }} />
 				<ImageGrid color={color}>
-					{edits.map((e, i) => (
+					{projects.map((p, i) => (
 						<motion.div
 							initial={{ y: '100vh' }}
 							animate={{ y: 0 }}
@@ -33,17 +33,33 @@ const AboutPage = ({ data }) => {
 							}}
 						>
 							<Polaroid
-								src={e.node.frontmatter.image}
-								title={e.node.frontmatter.title}
+								src={p.image}
+								title={p.title}
+								color={color}
+								linkTo={
+									'https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227'
+								}
+								gitHub={'https://github.com/o2dependent/minimalist-template'}
 							/>
 						</motion.div>
 					))}
 				</ImageGrid>
-				<ButtonGrid>
-					<Button color={color} to='/contact'>
-						Contact Me
-					</Button>
-				</ButtonGrid>
+				<motion.div
+					initial={{ y: '100vh' }}
+					animate={{ y: 0 }}
+					transition={{
+						type: 'spring',
+						bounce: 0.25,
+						damping: 100,
+						delay: projects.length * 0.05,
+					}}
+				>
+					<ButtonGrid>
+						<Button color={color} to='/contact'>
+							Contact Me
+						</Button>
+					</ButtonGrid>
+				</motion.div>
 			</Container>
 		</Layout>
 	)
@@ -86,24 +102,20 @@ const ImageGrid = styled.div`
 `
 
 export const data = graphql`
-	query EditContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "edit" } }) {
+	query ProjectsContentQuery {
+		markdownRemark(frontmatter: { page: { eq: "projects" } }) {
 			html
 			frontmatter {
 				color
-			}
-		}
-		allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/edits/" } }) {
-			edges {
-				node {
-					frontmatter {
-						title
-						image
-					}
+				projects {
+					linkTo
+					gitHub
+					title
+					image
 				}
 			}
 		}
 	}
 `
 
-export default AboutPage
+export default ProjectsPage

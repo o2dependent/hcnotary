@@ -17,7 +17,7 @@ const Header = ({ siteTitle, color }) => (
 			<Logo color={color} />
 		</LogoWrapper>
 		<LinkContainer>
-			<Link to='/edit'>Edit</Link>
+			<Link to='/projects'>Projects</Link>
 		</LinkContainer>
 		<LinkContainer>
 			<Link to='/contact'>Contact</Link>

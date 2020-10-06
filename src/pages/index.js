@@ -21,20 +21,16 @@ const IndexPage = ({ data }) => {
 		<Layout color={color}>
 			<SEO title='Home' />
 			<Container>
-				<GridContainer
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-				>
+				<GridContainer>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
 					<Button color={color} to='/about'>
 						About Me
 					</Button>
 				</GridContainer>
 				<AsideThrow
-					initial={{ y: `200%`, rotate: 25 }}
+					initial={{ y: `100vh`, rotate: 25 }}
 					animate={{ y: 0, rotate: 0 }}
-					transition={{ duration: 2, type: 'spring' }}
+					transition={{ stiffness: 50, dampening: 5, type: 'spring' }}
 				>
 					<MockPage color={color} />
 				</AsideThrow>

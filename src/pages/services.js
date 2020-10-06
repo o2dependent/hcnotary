@@ -18,25 +18,20 @@ import styled from 'styled-components'
 let color = '#fff'
 
 const AboutPage = ({ data }) => {
-	const { markdownRemark, allMarkdownRemark } = data
+	const { markdownRemark } = data
 	const { html } = markdownRemark
 	color = markdownRemark.frontmatter.color
-	const services = allMarkdownRemark.edges
-	console.log(services)
+	const services = markdownRemark.frontmatter.service_cards
 
 	return (
 		<Layout color={color}>
 			<SEO title='Services' />
 			<ServiceContainer>
-				<GridContainer
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-				>
+				<GridContainer>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
 					<ButtonGridLarge>
-						<Button color={color} to='/edit'>
-							My edits
+						<Button color={color} to='/projects'>
+							My projects
 						</Button>
 						<Button color={color} to='/contact'>
 							Contact Me
@@ -47,22 +42,23 @@ const AboutPage = ({ data }) => {
 					{services.map((s, i) => (
 						<ServiceCard
 							color={color}
-							initial={{ x: `200%` }}
+							initial={{ x: `50vw` }}
 							animate={{ x: `0%` }}
 							transition={{
-								duration: 1.5,
+								stiffness: 50,
+								dampening: 7,
 								type: 'spring',
 								delay: 0.1 + 0.1 * i,
 							}}
 						>
-							<h1>{s.node.frontmatter.title}</h1>
-							<p>{s.node.frontmatter.content}</p>
+							<h1>{s.title}</h1>
+							<p>{s.content}</p>
 						</ServiceCard>
 					))}
 				</ServiceCardContainer>
 				<ButtonGridSmall>
-					<Button color={color} to='/edit'>
-						My edits
+					<Button color={color} to='/projects'>
+						My projects
 					</Button>
 					<Button color={color} to='/contact'>
 						Contact Me
@@ -140,18 +136,9 @@ export const data = graphql`
 			html
 			frontmatter {
 				color
-			}
-		}
-		allMarkdownRemark(
-			filter: { fileAbsolutePath: { regex: "/service-content/" } }
-		) {
-			edges {
-				node {
-					id
-					frontmatter {
-						title
-						content
-					}
+				service_cards {
+					content
+					title
 				}
 			}
 		}

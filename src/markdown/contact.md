@@ -1,6 +1,6 @@
 ---
 page: 'contact'
-color: '#ED9E35'
+color: '#889DD7'
 success: 'Thank you for reaching out I will get back to you as soon as possible!'
 ---
 

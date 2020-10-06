@@ -1,13 +1,31 @@
 import { motion } from 'framer-motion'
+import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../helpers/colors'
+import { ButtonA, ButtonGrid } from './pageComponents'
 
-export default function Polaroid({ src, title }) {
+export default function Polaroid({ fluid, title, linkTo, gitHub, color }) {
 	return (
 		<Frame title={title}>
-			<Img src={src} />
-			{title ? <p>{title}</p> : null}
+			<Image fluid={fluid} />
+			{title ? (
+				<TitleContainer>
+					{title ? <Title>{title}</Title> : null}
+					<ButtonGrid>
+						{linkTo ? (
+							<ButtonA href={linkTo} color={color}>
+								Check it
+							</ButtonA>
+						) : null}
+						{gitHub ? (
+							<ButtonA href={gitHub} color={color}>
+								GitHub
+							</ButtonA>
+						) : null}
+					</ButtonGrid>
+				</TitleContainer>
+			) : null}
 		</Frame>
 	)
 }
@@ -22,6 +40,17 @@ const Frame = styled(motion.div)`
 	@media only screen and (max-width: 768px) {
 		width: 100%;
 	}
+`
+
+const Title = styled.p`
+	width: 100%;
+`
+
+const TitleContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 3rem;
+	width: 100%;
 `
 
 const ImageWrapper = styled.div`
@@ -41,14 +70,8 @@ const ImageWrapper = styled.div`
 	}
 `
 
-const Image = styled.img`
-	width: 100%;
-	margin: 0 auto;
-	margin-bottom: -5px;
-`
-
-const Img = ({ src }) => (
+const Image = ({ fluid }) => (
 	<ImageWrapper>
-		<Image src={src} />
+		<Img fluid={fluid} />
 	</ImageWrapper>
 )
