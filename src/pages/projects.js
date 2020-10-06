@@ -14,8 +14,6 @@ const ProjectsPage = ({ data }) => {
 	const color = markdownRemark.frontmatter.color
 	const projects = markdownRemark.frontmatter.projects
 
-	console.log(projects)
-
 	return (
 		<Layout color={color}>
 			<SEO title='Edit' />

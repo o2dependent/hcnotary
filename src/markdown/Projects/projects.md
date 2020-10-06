@@ -4,11 +4,11 @@ title: Gallery Content
 color: '#889DD7'
 projects:
   - title: Title
-    image: ../../static/img/code-tutor.jpg
+    image: ../../../static/img/code-tutor.jpg
     linkTo: 'https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227'
     gitHub: 'https://github.com/o2dependent/minimalist-template'
   - title: Title
-    image: ../../static/img/code-tutor.jpg
+    image: ../../../static/img/code-tutor.jpg
     linkTo: 'https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227'
     gitHub: 'https://github.com/o2dependent/minimalist-template'
 ---

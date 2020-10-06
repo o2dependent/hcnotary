@@ -39,6 +39,23 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: markdown }
+  - name: projects
+    label: Projects
+    folder: src/markdown/Projects
+    create: false
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Color, name: color, widget: string }
+      - { label: Body, name: body, widget: markdown }
+      - name: projects
+        label: Project Cards
+        create: true
+        widget: list
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Link To, name: linkTo, widget: string }
+          - { label: GitHub, name: gitHub, widget: string }
   - name: contact
     label: Contact
     folder: src/markdown/Contact

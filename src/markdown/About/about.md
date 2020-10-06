@@ -2,7 +2,7 @@
 page: about
 title: About Content
 color: '#889DD7'
-image: ../../static/img/code-tutor.jpg
+image: ../../../static/img/code-tutor.jpg
 ---
 
 # About.
