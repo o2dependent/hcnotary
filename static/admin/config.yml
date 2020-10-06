@@ -13,7 +13,6 @@ collections:
     create: false
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Page, name: page, widget: string }
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
   - name: about
@@ -27,7 +26,7 @@ collections:
       - { label: Image, name: image, widget: image }
   - name: services
     label: Services
-    folder: src/markdown/Service
+    folder: src/markdown/Services
     create: false
     fields:
       - { label: Title, name: title, widget: string }
@@ -35,24 +34,16 @@ collections:
       - { label: Body, name: body, widget: markdown }
       - name: service-cards
         label: Service Cards
-        folder: 'src/markdown/Service Cards'
         create: true
         widget: list
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Content, name: content, widget: markdown }
-  - name: gallery
-    label: Gallery
-    folder: src/markdown/Gallery
+  - name: contact
+    label: Contact
+    folder: src/markdown/Contact
     create: false
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Color, name: color, widget: string }
-      - { label: Content, name: content, widget: markdown }
-  - name: gallery-cards
-    label: Gallery Cards
-    folder: 'src/markdown/Gallery Cards'
-    create: true
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Image, name: image, widget: image }
+      - { label: Body, name: body, widget: markdown }
