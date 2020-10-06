@@ -12,7 +12,7 @@ projects:
     linkTo: https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227
     gitHub: https://github.com/o2dependent/minimalist-template
   - title: Look a title
-    image: ../../../img/code-tutor.jpg
+    image: ../../../static/img/danny-boi.jpg
     linkTo: https://www.youtube.com/watch?v=jktwitQtwXM
     gitHub: https://github.com/o2dependent/minimalist-template
 ---
