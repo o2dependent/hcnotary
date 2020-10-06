@@ -13,6 +13,7 @@ const ProjectsPage = ({ data }) => {
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
 	const projects = markdownRemark.frontmatter.projects
+
 	console.log(projects)
 
 	return (
@@ -33,13 +34,11 @@ const ProjectsPage = ({ data }) => {
 							}}
 						>
 							<Polaroid
-								src={p.image}
+								fluid={p.image.childImageSharp.fluid}
 								title={p.title}
 								color={color}
-								linkTo={
-									'https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227'
-								}
-								gitHub={'https://github.com/o2dependent/minimalist-template'}
+								linkTo={p.linkTo}
+								gitHub={p.gitHub}
 							/>
 						</motion.div>
 					))}
@@ -111,7 +110,13 @@ export const data = graphql`
 					linkTo
 					gitHub
 					title
-					image
+					image {
+						childImageSharp {
+							fluid(maxWidth: 500) {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
 				}
 			}
 		}

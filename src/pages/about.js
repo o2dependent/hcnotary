@@ -18,7 +18,6 @@ const AboutPage = ({ data }) => {
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
 	const fluid = markdownRemark.frontmatter.image.childImageSharp.fluid
-	console.log(data)
 
 	return (
 		<Layout color={color}>
@@ -39,7 +38,7 @@ const AboutPage = ({ data }) => {
 					style={{ top: `5vh` }}
 					initial={{ x: `100vw`, rotate: -90 }}
 					animate={{ x: 0, rotate: 0 }}
-					transition={{ stiffness: 50, dampening: 100, type: 'spring' }}
+					transition={{ stiffness: 50, dampening: 7, type: 'spring' }}
 				>
 					<Polaroid fluid={fluid} />
 				</AsideThrow>

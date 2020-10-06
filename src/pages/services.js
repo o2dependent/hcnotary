@@ -42,7 +42,7 @@ const AboutPage = ({ data }) => {
 					{services.map((s, i) => (
 						<ServiceCard
 							color={color}
-							initial={{ x: `50vw` }}
+							initial={{ x: `100vw` }}
 							animate={{ x: `0%` }}
 							transition={{
 								stiffness: 50,
