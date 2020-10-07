@@ -44,6 +44,7 @@ const Frame = styled(motion.div)`
 
 const Title = styled.p`
 	width: 100%;
+	font-weight: 500;
 `
 
 const TitleContainer = styled.div`

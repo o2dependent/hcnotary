@@ -30,9 +30,14 @@ const AboutPage = ({ data }) => {
 					netlify
 				>
 					<TextInput
-						initial={{ x: '-100vw' }}
-						animate={{ x: 0 }}
-						transition={{ type: 'spring', bounce: 0.15, stiffness: 10000 }}
+						initial={{ y: '100vh' }}
+						animate={{ y: 0 }}
+						transition={{
+							type: 'spring',
+							bounce: 0.15,
+							stiffness: 10000,
+							delay: 0.1,
+						}}
 						type='text'
 						id='name'
 						name='name'
@@ -40,9 +45,14 @@ const AboutPage = ({ data }) => {
 						required
 					/>
 					<TextInput
-						initial={{ x: '100vw' }}
-						animate={{ x: 0 }}
-						transition={{ type: 'spring', bounce: 0.15, stiffness: 1000 }}
+						initial={{ y: '100vh' }}
+						animate={{ y: 0 }}
+						transition={{
+							type: 'spring',
+							bounce: 0.15,
+							stiffness: 1000,
+							delay: 0.1,
+						}}
 						type='text'
 						id='email'
 						name='email'
@@ -52,7 +62,12 @@ const AboutPage = ({ data }) => {
 					<TextField
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
-						transition={{ type: 'spring', bounce: 0.15, stiffness: 1000 }}
+						transition={{
+							type: 'spring',
+							bounce: 0.15,
+							stiffness: 1000,
+							delay: 0.2,
+						}}
 						id='message'
 						name='message'
 						placeholder='Message'
@@ -60,7 +75,12 @@ const AboutPage = ({ data }) => {
 					<Button
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
-						transition={{ type: 'spring', bounce: 0.2, stiffness: 1000 }}
+						transition={{
+							type: 'spring',
+							bounce: 0.2,
+							stiffness: 1000,
+							delay: 0.25,
+						}}
 						color={color}
 						type='submit'
 					>

@@ -8,7 +8,7 @@ export default function MockText({ num, delay, dark }) {
 				display: 'grid',
 				alignItems: 'flex-end',
 				gridTemplateRows: `repeat(${num || 1}, 1fr)`,
-				padding: '1vmin',
+				padding: '0.5rem',
 			}}
 		>
 			<TitleBar
@@ -38,7 +38,10 @@ export default function MockText({ num, delay, dark }) {
 							short
 							initial={{ width: 0 }}
 							animate={{ width: '75%' }}
-							transition={{ duration: 1 + (delay || 0.15) * i, delay: 0.5 }}
+							transition={{
+								duration: 1,
+								delay: (delay || 0.15) * i,
+							}}
 						/>
 					)
 				)}

@@ -1,7 +1,7 @@
 ---
 page: projects
 title: Gallery Content
-color: "#889DD7"
+color: '#889DD7'
 projects:
   - title: Title
     image: ../../../static/img/code-tutor.jpg

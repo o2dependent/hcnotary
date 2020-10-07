@@ -43,12 +43,12 @@ const AboutPage = ({ data }) => {
 						<ServiceCard
 							color={color}
 							initial={{ x: `100vw` }}
-							animate={{ x: `0%` }}
+							animate={{ x: 0 }}
 							transition={{
 								stiffness: 50,
 								dampening: 7,
 								type: 'spring',
-								delay: 0.1 + 0.1 * i,
+								delay: 0.05 * i,
 							}}
 						>
 							<h1>{s.title}</h1>
