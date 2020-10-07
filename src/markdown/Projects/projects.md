@@ -1,6 +1,6 @@
 ---
 page: projects
-title: Gallery Content
+title: Projects Content
 color: "#889DD7"
 projects:
   - image: ../../../static/img/coding.jpg
