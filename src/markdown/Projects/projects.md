@@ -3,12 +3,15 @@ page: projects
 title: Projects Content
 color: "#889DD7"
 projects:
-  - image: ../../../static/img/coding.jpg
-    title: Work in Progress! Check back later :)
-    linkTo: https://github.com/o2dependent
-    gitHub: https://github.com/o2dependent
+  - title: Fig Mood
+    image: ../../../static/img/figmood.png
+    linkTo: https://figmood.netlify.app/
+    gitHub: https://github.com/o2dependent/mood-log
+  - title: Old Portfolio
+    image: ../../../static/img/preview.png
+    linkTo: https://old-eolsen.netlify.app/
+    gitHub: https://github.com/o2dependent/react-portfolio-netlify
 ---
+# Projects.
 
-#Projects.
-
-This is body text in projects.md. Stuff and some things all up in this file.
+Below are a few projects that I have had fun creating in the past months. If you are interested in keeping up with my most recent work check out my [](https://github.com/o2dependent)GitHub.
