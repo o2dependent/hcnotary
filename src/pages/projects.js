@@ -16,7 +16,7 @@ const ProjectsPage = ({ data }) => {
 
 	return (
 		<Layout color={color}>
-			<SEO title='Edit' />
+			<SEO title='Projects' />
 			<Container>
 				<Content dangerouslySetInnerHTML={{ __html: html }} />
 				<ImageGrid color={color}>
