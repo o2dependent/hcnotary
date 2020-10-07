@@ -1,20 +1,12 @@
 ---
 page: projects
 title: Gallery Content
-color: '#889DD7'
+color: "#889DD7"
 projects:
-  - title: Title
-    image: ../../../static/img/code-tutor.jpg
-    linkTo: https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227
-    gitHub: https://github.com/o2dependent/minimalist-template
-  - title: Title
-    image: ../../../static/img/code-tutor.jpg
-    linkTo: https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227
-    gitHub: https://github.com/o2dependent/minimalist-template
-  - title: Look a title
-    image: ../../../static/img/danny-boi.jpg
-    linkTo: https://www.youtube.com/watch?v=jktwitQtwXM
-    gitHub: https://github.com/o2dependent/minimalist-template
+  - image: ../../../static/img/coding.jpg
+    title: Work in Progress! Check back later :)
+    linkTo: https://github.com/o2dependent
+    gitHub: https://github.com/o2dependent
 ---
 
 #Projects.
