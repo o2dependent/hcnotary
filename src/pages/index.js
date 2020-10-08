@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
 	const color = markdownRemark.frontmatter.color
 
 	return (
-		<Layout color={color}>
+		<Layout key='page' color={color}>
 			<SEO title='Home' />
 			<Container>
 				<GridContainer>

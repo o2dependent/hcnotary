@@ -5,23 +5,21 @@ import SEO from '../../components/seo'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import colors from '../../helpers/colors'
+import Confetti from 'react-confetti'
 
 const ContactSuccess = ({ data }) => {
 	const { markdownRemark } = data
-	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
+	const success = markdownRemark.frontmatter.success
 
 	return (
 		<Layout color={color}>
 			<SEO title='Contact' />
+			<Confetti />
 			<ContactContainer>
-				<ContactContent
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}
-					dangerouslySetInnerHTML={{ __html: html }}
-				/>
+				<ContactContent>
+					<h1>{success}</h1>
+				</ContactContent>
 			</ContactContainer>
 		</Layout>
 	)
@@ -38,10 +36,12 @@ const ContactContainer = styled(motion.div)`
 	width: 80%;
 	height: 100%;
 	margin: 5vh auto;
+	flex-grow: 1;
 `
 
 const ContactContent = styled.div`
-	width: 100%;
+	width: 90%;
+	max-width: 1000px;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
@@ -52,16 +52,6 @@ const ContactContent = styled.div`
 		margin-bottom: 2rem;
 		@media only screen and (max-width: 600px) {
 			font-size: 1.75rem;
-		}
-	}
-	& p {
-		margin-bottom: 2rem;
-		line-height: 2.2rem;
-		width: 80%;
-		font-size: 1.5rem;
-		@media only screen and (max-width: 600px) {
-			font-size: 1.1rem;
-			width: 100%;
 		}
 	}
 `

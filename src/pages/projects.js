@@ -15,7 +15,7 @@ const ProjectsPage = ({ data }) => {
 	const projects = markdownRemark.frontmatter.projects
 
 	return (
-		<Layout color={color}>
+		<Layout key='page' color={color}>
 			<SEO title='Projects' />
 			<Container>
 				<Content dangerouslySetInnerHTML={{ __html: html }} />
