@@ -1,22 +1,17 @@
 ---
 page: projects
-title: Gallery Content
-color: '#889DD7'
+title: Projects Content
+color: "#889DD7"
 projects:
-  - title: Title
-    image: ../../../static/img/code-tutor.jpg
-    linkTo: https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227
-    gitHub: https://github.com/o2dependent/minimalist-template
-  - title: Title
-    image: ../../../static/img/code-tutor.jpg
-    linkTo: https://jarvisjohnson.teespring.com/listing/this-shirt-is-trying-its-best?product=227
-    gitHub: https://github.com/o2dependent/minimalist-template
-  - title: Look a title
-    image: ../../../static/img/danny-boi.jpg
-    linkTo: https://www.youtube.com/watch?v=jktwitQtwXM
-    gitHub: https://github.com/o2dependent/minimalist-template
+  - title: Fig Mood
+    image: ../../../static/img/figmood.png
+    linkTo: https://figmood.netlify.app/
+    gitHub: https://github.com/o2dependent/mood-log
+  - title: Old Portfolio
+    image: ../../../static/img/preview.png
+    linkTo: https://old-eolsen.netlify.app/
+    gitHub: https://github.com/o2dependent/react-portfolio-netlify
 ---
+# Projects.
 
-#Projects.
-
-This is body text in projects.md. Stuff and some things all up in this file.
+Below are a few projects that I have had fun creating in the past months. If you are interested in keeping up with my most recent work check out my [](https://github.com/o2dependent)GitHub.
