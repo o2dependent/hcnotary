@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -23,6 +23,7 @@ const ContactSuccess = () => {
 	const color = markdownRemark.frontmatter.color
 	const success = markdownRemark.frontmatter.success
 	const { width, height } = useWindowSize()
+	console.log({ width, height })
 
 	return (
 		<Layout color={color}>
