@@ -26,7 +26,10 @@ const ContactSuccess = () => {
 	return (
 		<Layout color={color}>
 			<SEO title='Contact' />
-			<Confetti width={window.innerWidth} height={window.innerHeight} />
+			<Confetti
+				width={window.innerWidth || 200}
+				height={window.innerHeight || 200}
+			/>
 			<ContactContainer>
 				<ContactContent>
 					<h1>{success}</h1>
