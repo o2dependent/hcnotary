@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import Confetti from 'react-confetti'
 
 const ContactSuccess = () => {
+	const { width, height } = useWindowSize()
 	const data = useStaticQuery(graphql`
 		query ContactSuccessContentQuery {
 			markdownRemark(frontmatter: { page: { eq: "contact" } }) {
@@ -22,8 +23,6 @@ const ContactSuccess = () => {
 	const { markdownRemark } = data
 	const color = markdownRemark.frontmatter.color
 	const success = markdownRemark.frontmatter.success
-	const { width, height } = useWindowSize()
-	console.log({ width, height })
 
 	return (
 		<Layout color={color}>
