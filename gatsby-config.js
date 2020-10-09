@@ -60,6 +60,18 @@ module.exports = {
 			},
 		},
 		{
+			resolve: `gatsby-plugin-manifest`,
+			options: {
+				name: `Gatsby Blog`,
+				short_name: `Blog`,
+				start_url: `/`,
+				background_color: `#663399`,
+				theme_color: `#663399`,
+				display: `minimal-ui`,
+				icon: `src/images/eo.svg`, // This path is relative to the root of the site.
+			},
+		},
+		{
 			resolve: `gatsby-plugin-styled-components`,
 		},
 		`gatsby-plugin-netlify-cms`,

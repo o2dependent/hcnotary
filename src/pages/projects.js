@@ -3,12 +3,34 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Button, Content, ButtonGrid } from '../components/pageComponents'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Polaroid from '../components/polaroid'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const ProjectsPage = ({ data }) => {
+const ProjectsPage = () => {
+	const data = useStaticQuery(graphql`
+		query ProjectsContentQuery {
+			markdownRemark(frontmatter: { page: { eq: "projects" } }) {
+				html
+				frontmatter {
+					color
+					projects {
+						linkTo
+						gitHub
+						title
+						image {
+							childImageSharp {
+								fluid(maxWidth: 500) {
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	`)
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
@@ -94,29 +116,6 @@ const ImageGrid = styled.div`
 			margin: 0;
 			margin-top: 0.5rem;
 			font-size: 1.25rem;
-		}
-	}
-`
-
-export const data = graphql`
-	query ProjectsContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "projects" } }) {
-			html
-			frontmatter {
-				color
-				projects {
-					linkTo
-					gitHub
-					title
-					image {
-						childImageSharp {
-							fluid(maxWidth: 500) {
-								...GatsbyImageSharpFluid
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 `

@@ -10,9 +10,19 @@ import {
 	Container,
 	AsideThrow,
 } from '../components/pageComponents'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
+	const data = useStaticQuery(graphql`
+		query IndexContentQuery {
+			markdownRemark(frontmatter: { page: { eq: "index" } }) {
+				html
+				frontmatter {
+					color
+				}
+			}
+		}
+	`)
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
@@ -38,16 +48,5 @@ const IndexPage = ({ data }) => {
 		</Layout>
 	)
 }
-
-export const data = graphql`
-	query IndexContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "index" } }) {
-			html
-			frontmatter {
-				color
-			}
-		}
-	}
-`
 
 export default IndexPage

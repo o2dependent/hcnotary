@@ -10,10 +10,27 @@ import {
 	ButtonGrid,
 	AsideThrow,
 } from '../components/pageComponents'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Polaroid from '../components/polaroid'
 
-const AboutPage = ({ data }) => {
+const AboutPage = () => {
+	const data = useStaticQuery(graphql`
+		query AboutContentQuery {
+			markdownRemark(frontmatter: { page: { eq: "about" } }) {
+				html
+				frontmatter {
+					color
+					image {
+						childImageSharp {
+							fluid(maxWidth: 500) {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
+				}
+			}
+		}
+	`)
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
@@ -46,23 +63,5 @@ const AboutPage = ({ data }) => {
 		</Layout>
 	)
 }
-
-export const data = graphql`
-	query AboutContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "about" } }) {
-			html
-			frontmatter {
-				color
-				image {
-					childImageSharp {
-						fluid(maxWidth: 500) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
-			}
-		}
-	}
-`
 
 export default AboutPage

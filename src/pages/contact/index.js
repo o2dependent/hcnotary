@@ -2,12 +2,22 @@ import React from 'react'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../../helpers/colors'
 
-const AboutPage = ({ data }) => {
+const ContactPage = () => {
+	const data = useStaticQuery(graphql`
+		query ContactContentQuery {
+			markdownRemark(frontmatter: { page: { eq: "contact" } }) {
+				html
+				frontmatter {
+					color
+				}
+			}
+		}
+	`)
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
@@ -131,7 +141,7 @@ const ContactContainer = styled(motion.div)`
 `
 
 const ContactContent = styled.div`
-	width: 100%;
+	width: 1000px;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
@@ -147,7 +157,7 @@ const ContactContent = styled.div`
 	& p {
 		margin-bottom: 2rem;
 		line-height: 2.2rem;
-		width: 80%;
+		width: 90%;
 		font-size: 1.5rem;
 		@media only screen and (max-width: 600px) {
 			font-size: 1.1rem;
@@ -210,15 +220,4 @@ const TextField = styled(motion.textarea)`
 	}
 `
 
-export const data = graphql`
-	query ContactContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "contact" } }) {
-			html
-			frontmatter {
-				color
-			}
-		}
-	}
-`
-
-export default AboutPage
+export default ContactPage

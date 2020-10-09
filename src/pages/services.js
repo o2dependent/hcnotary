@@ -9,7 +9,7 @@ import {
 	Container,
 	ButtonGrid,
 } from '../components/pageComponents'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import style from 'styled-components'
 import { motion } from 'framer-motion'
 import colors from '../helpers/colors'
@@ -17,7 +17,21 @@ import styled from 'styled-components'
 
 let color = '#fff'
 
-const AboutPage = ({ data }) => {
+const AboutPage = () => {
+	const data = useStaticQuery(graphql`
+		query ServicesContentQuery {
+			markdownRemark(frontmatter: { page: { eq: "services" } }) {
+				html
+				frontmatter {
+					color
+					service_cards {
+						content
+						title
+					}
+				}
+			}
+		}
+	`)
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	color = markdownRemark.frontmatter.color
@@ -126,21 +140,6 @@ const ServiceCard = style(motion.div)`
 		@media only screen and (max-width: 600px) {
 			font-size: 1.1rem;
 			width: 100%;
-		}
-	}
-`
-
-export const data = graphql`
-	query ServicesContentQuery {
-		markdownRemark(frontmatter: { page: { eq: "services" } }) {
-			html
-			frontmatter {
-				color
-				service_cards {
-					content
-					title
-				}
-			}
 		}
 	}
 `
