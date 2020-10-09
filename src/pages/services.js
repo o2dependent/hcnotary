@@ -38,7 +38,7 @@ const AboutPage = () => {
 	const services = markdownRemark.frontmatter.service_cards
 
 	return (
-		<Layout key='page' color={color}>
+		<Layout color={color}>
 			<SEO title='Services' />
 			<ServiceContainer>
 				<GridContainer>
