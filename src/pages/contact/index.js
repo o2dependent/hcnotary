@@ -24,7 +24,7 @@ const ContactPage = () => {
 
 	return (
 		<Layout color={color}>
-			<SEO title='Contact' />
+			<SEO title='contact' />
 			<ContactContainer>
 				<ContactContent
 					initial={{ opacity: 0 }}
@@ -37,10 +37,9 @@ const ContactPage = () => {
 					method='POST'
 					action='/contact/success'
 					data-netlify='true'
-					netlify
+					netlify-honeypot='bot-field'
 				>
 					<input type='hidden' name='bot-field' />
-					<input type='hidden' name='form-name' value='contact' />
 					<TextInput
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
