@@ -1,7 +1,7 @@
 ---
 page: services
 title: Services Content
-color: "#889DD7"
+color: "#8980f5"
 service-cards:
   - title: Front end
     content: I use React, Gatsby, and Framer-motion to create fast clean and

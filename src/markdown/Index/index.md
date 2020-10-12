@@ -1,7 +1,7 @@
 ---
 title: Index Content
 page: index
-color: "#889DD7"
+color: "#8093f1"
 ---
 # Hello, I am Ethan Olsen.
 

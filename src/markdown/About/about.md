@@ -1,7 +1,7 @@
 ---
 page: about
 title: About Content
-color: "#889DD7"
+color: "#758bfd"
 image: ../../../static/img/19222758_1483497971708628_928369015388597145_o.jpg
 ---
 # About.

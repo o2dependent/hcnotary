@@ -1,7 +1,7 @@
 ---
 page: projects
 title: Projects Content
-color: "#889DD7"
+color: "#9d4edd"
 projects:
   - title: Fig Mood
     image: ../../../static/img/figmood.png

@@ -1,6 +1,6 @@
 ---
 page: contact
-color: "#889DD7"
+color: "#8900f2"
 success: Thank you for reaching out I will get back to you as soon as possible!
 title: Contact Content
 ---
