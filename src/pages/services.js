@@ -52,15 +52,13 @@ const AboutPage = () => {
 						</Button>
 					</ButtonGridLarge>
 				</GridContainer>
-				<ServiceCardContainer>
+				<ServiceCardContainer color={color}>
 					{services.map((s, i) => (
 						<ServiceCard
-							color={color}
-							initial={{ x: `100vw` }}
-							animate={{ x: 0 }}
+							initial={{ y: `100vh` }}
+							animate={{ y: 0 }}
 							transition={{
 								stiffness: 50,
-								dampening: 7,
 								type: 'spring',
 								delay: 0.05 * i,
 							}}
@@ -107,6 +105,9 @@ const ServiceCardContainer = style.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	& h1, p {
+		color: ${props => props.color};
+	}
 `
 
 const ServiceCard = style(motion.div)`
@@ -118,13 +119,12 @@ const ServiceCard = style(motion.div)`
 	margin-bottom: 1rem;
 	background: ${colors.white};
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	padding: 3vmin;
+	padding: 1.5rem;
 	& h1 {
 		width: 100%;
 		font-weight: 300;
 		font-size: 2rem;
 		margin: 0.5rem auto;
-		color: ${props => props.color};
 		font-weight: 400;
 		@media only screen and (max-width: 600px) {
 			font-size: 1.75rem;
@@ -136,7 +136,6 @@ const ServiceCard = style(motion.div)`
 		width: 100%;
 		font-size: 1.2rem;
 		margin: 0 auto;
-		color: ${props => props.color};
 		@media only screen and (max-width: 600px) {
 			font-size: 1.1rem;
 			width: 100%;

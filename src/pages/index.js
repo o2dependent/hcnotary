@@ -40,7 +40,7 @@ const IndexPage = () => {
 				<AsideThrow
 					initial={{ y: `100vh`, rotate: 25 }}
 					animate={{ y: 0, rotate: 0 }}
-					transition={{ stiffness: 50, dampening: 5, type: 'spring' }}
+					transition={{ stiffness: 50, type: 'spring' }}
 				>
 					<MockPage color={color} />
 				</AsideThrow>

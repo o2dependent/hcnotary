@@ -53,9 +53,9 @@ const AboutPage = () => {
 				</GridContainer>
 				<AsideThrow
 					style={{ top: `5vh` }}
-					initial={{ x: `100vw`, rotate: -90 }}
-					animate={{ x: 0, rotate: 0 }}
-					transition={{ stiffness: 50, dampening: 7, type: 'spring' }}
+					initial={{ y: `100vh`, rotate: -45 }}
+					animate={{ y: 0, rotate: 0 }}
+					transition={{ stiffness: 50, type: 'spring' }}
 				>
 					<Polaroid fluid={fluid} />
 				</AsideThrow>

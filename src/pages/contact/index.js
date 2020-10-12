@@ -46,8 +46,7 @@ const ContactPage = () => {
 						animate={{ y: 0 }}
 						transition={{
 							type: 'spring',
-							bounce: 0.15,
-							stiffness: 10000,
+							stiffness: 50,
 							delay: 0.1,
 						}}
 						type='text'
@@ -61,8 +60,7 @@ const ContactPage = () => {
 						animate={{ y: 0 }}
 						transition={{
 							type: 'spring',
-							bounce: 0.15,
-							stiffness: 1000,
+							stiffness: 50,
 							delay: 0.1,
 						}}
 						type='text'
@@ -76,8 +74,7 @@ const ContactPage = () => {
 						animate={{ y: 0 }}
 						transition={{
 							type: 'spring',
-							bounce: 0.15,
-							stiffness: 1000,
+							stiffness: 50,
 							delay: 0.2,
 						}}
 						id='message'
@@ -89,9 +86,8 @@ const ContactPage = () => {
 						animate={{ y: 0 }}
 						transition={{
 							type: 'spring',
-							bounce: 0.2,
-							stiffness: 1000,
-							delay: 0.25,
+							stiffness: 50,
+							delay: 0.22,
 						}}
 						color={color}
 						type='submit'
@@ -131,10 +127,10 @@ const Button = styled(motion.button)`
 
 const ContactContainer = styled(motion.div)`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	flex-wrap: wrap;
 	position: relative;
 	justify-self: center;
 	width: 80%;

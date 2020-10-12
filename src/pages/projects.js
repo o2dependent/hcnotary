@@ -47,9 +47,8 @@ const ProjectsPage = () => {
 							initial={{ y: '100vh' }}
 							animate={{ y: 0 }}
 							transition={{
+								stiffness: 50,
 								type: 'spring',
-								bounce: 0.25,
-								damping: 100,
 								delay: i * 0.05,
 							}}
 						>
@@ -68,8 +67,7 @@ const ProjectsPage = () => {
 					animate={{ y: 0 }}
 					transition={{
 						type: 'spring',
-						bounce: 0.25,
-						damping: 100,
+						stiffness: 50,
 						delay: projects.length * 0.05,
 					}}
 				>
