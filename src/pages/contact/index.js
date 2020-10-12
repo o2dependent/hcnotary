@@ -42,8 +42,8 @@ const ContactPage = () => {
 					<input type='hidden' name='bot-field' />
 					<input type='hidden' name='form-name' value='contact' />
 					<TextInput
-						initial={{ y: '100vh' }}
-						animate={{ y: 0 }}
+						initial={{ y: '100vh', rotate: 15 }}
+						animate={{ y: 0, rotate: 0 }}
 						transition={{
 							type: 'spring',
 							stiffness: 50,
@@ -56,22 +56,22 @@ const ContactPage = () => {
 						required
 					/>
 					<TextInput
-						initial={{ y: '100vh' }}
-						animate={{ y: 0 }}
+						initial={{ y: '100vh', rotate: -15 }}
+						animate={{ y: 0, rotate: 0 }}
 						transition={{
 							type: 'spring',
 							stiffness: 50,
 							delay: 0.1,
 						}}
-						type='text'
+						type='email'
 						id='email'
 						name='email'
 						placeholder='Email'
 						required
 					/>
 					<TextField
-						initial={{ y: '100vh' }}
-						animate={{ y: 0 }}
+						initial={{ y: '100vh', rotate: -15 }}
+						animate={{ y: 0, rotate: 0 }}
 						transition={{
 							type: 'spring',
 							stiffness: 50,
@@ -82,8 +82,8 @@ const ContactPage = () => {
 						placeholder='Message'
 					/>
 					<Button
-						initial={{ y: '100vh' }}
-						animate={{ y: 0 }}
+						initial={{ y: '100vh', rotate: 15 }}
+						animate={{ y: 0, rotate: 0 }}
 						transition={{
 							type: 'spring',
 							stiffness: 50,

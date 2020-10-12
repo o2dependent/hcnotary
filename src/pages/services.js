@@ -55,8 +55,8 @@ const AboutPage = () => {
 				<ServiceCardContainer color={color}>
 					{services.map((s, i) => (
 						<ServiceCard
-							initial={{ y: `100vh` }}
-							animate={{ y: 0 }}
+							initial={{ y: `100vh`, rotate: (i / services.length * 45) }}
+							animate={{ y: 0, rotate: 0 }}
 							transition={{
 								stiffness: 50,
 								type: 'spring',
