@@ -40,6 +40,7 @@ const ContactPage = () => {
 					netlify-honeypot='bot-field'
 				>
 					<input type='hidden' name='bot-field' />
+					<input type='hidden' name='form-name' value='contact' />
 					<TextInput
 						initial={{ y: '100vh' }}
 						animate={{ y: 0 }}
