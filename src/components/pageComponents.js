@@ -32,18 +32,15 @@ const Content = styled.div`
 	& h1 {
 		font-weight: 300;
 		font-size: 3rem;
+		font-size: clamp(2rem, 3.5vw, 3rem);
 		margin-bottom: 2rem;
-		@media only screen and (max-width: 600px) {
-			font-size: 1.75rem;
-		}
 	}
 	& p {
 		margin-bottom: 2rem;
 		line-height: 2.2rem;
 		width: 80%;
-		font-size: 1.5rem;
+		font-size: clamp(1.1rem, 2.5vw, 1.5rem);
 		@media only screen and (max-width: 600px) {
-			font-size: 1.1rem;
 			width: 100%;
 		}
 	}

@@ -146,21 +146,20 @@ const ContactContent = styled.div`
 	align-items: center;
 	& h1 {
 		font-weight: 300;
-		font-size: 3rem;
+		font-size: clamp(2rem, 3.5vw, 3rem);
 		margin-bottom: 2rem;
-		@media only screen and (max-width: 600px) {
-			font-size: 1.75rem;
-		}
 	}
 	& p {
 		margin-bottom: 2rem;
 		line-height: 2.2rem;
 		width: 90%;
-		font-size: 1.5rem;
+		font-size: clamp(1rem, 4vw, 1.5rem);
 		@media only screen and (max-width: 600px) {
-			font-size: 1.1rem;
 			width: 100%;
 		}
+	}
+	@media only screen and (max-width: 1060px) {
+		width: 100%;
 	}
 `
 
