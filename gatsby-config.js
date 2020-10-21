@@ -1,9 +1,9 @@
 module.exports = {
 	siteMetadata: {
-		title: `Ethan Olsen`,
-		description: `Ethan Olsen's freelance web development portfolio site. High end and affordable web development and design in the Pacific Northwest.`,
-		author: `Ethan Olsen`,
-		siteUrl: `https://eolsen.dev`,
+		title: `HC Notary`,
+		description: `Hood Canal Mobile Notary Services, LLC.`,
+		author: `HC Notary`,
+		siteUrl: `https://hcnotary.com`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,

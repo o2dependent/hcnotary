@@ -32,7 +32,10 @@ const Layout = ({ children, color }) => {
 				siteTitle={data.site.siteMetadata?.title || `Title`}
 			/>
 			{children}
-			<Footer>Not a lawyer and not able to give legal adivce.</Footer>
+			<Footer>
+				I am not an attorney licensed to practice law in Washington State and
+				may not give legal advice or accept fees for legal advice.
+			</Footer>
 		</LayoutWrapper>
 	)
 }
