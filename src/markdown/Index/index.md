@@ -1,8 +1,8 @@
 ---
 title: Index Content
 page: index
-color: '#8F81E8'
-image: ../../../static/img/19222758_1483497971708628_928369015388597145_o.jpg
+color: "#8F81E8"
+image: ../../../static/img/received_352240812754032.jpeg
 ---
 
 # Welcome to HC Notary.
