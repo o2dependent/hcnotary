@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: master
-  repo: o2dependent/minimalist-template
+  repo: o2dependent/hcnotary
 
 media_folder: static/img
 public_folder: ../../../static/img
@@ -15,6 +15,7 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
+      - { label: Image, name: image, widget: image }
   - name: about
     label: About
     folder: src/markdown/About
@@ -24,38 +25,6 @@ collections:
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
       - { label: Image, name: image, widget: image }
-  - name: services
-    label: Services
-    folder: src/markdown/Services
-    create: false
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Color, name: color, widget: string }
-      - { label: Body, name: body, widget: markdown }
-      - name: service-cards
-        label: Service Cards
-        create: true
-        widget: list
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Content, name: content, widget: markdown }
-  - name: projects
-    label: Projects
-    folder: src/markdown/Projects
-    create: false
-    fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Color, name: color, widget: string }
-      - { label: Body, name: body, widget: markdown }
-      - name: projects
-        label: Project Cards
-        create: true
-        widget: list
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Link To, name: linkTo, widget: string }
-          - { label: GitHub, name: gitHub, widget: string }
   - name: contact
     label: Contact
     folder: src/markdown/Contact

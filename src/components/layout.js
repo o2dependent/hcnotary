@@ -32,6 +32,7 @@ const Layout = ({ children, color }) => {
 				siteTitle={data.site.siteMetadata?.title || `Title`}
 			/>
 			{children}
+			<Footer>Not a lawyer and not able to give legal adivce.</Footer>
 		</LayoutWrapper>
 	)
 }
@@ -39,6 +40,14 @@ const Layout = ({ children, color }) => {
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
 }
+
+const Footer = styled.footer`
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+	transform: translateX(50%);
+	opacity: 0.5;
+`
 
 const LayoutWrapper = styled.div`
 	display: flex;

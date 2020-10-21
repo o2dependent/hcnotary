@@ -10,15 +10,9 @@ const Header = ({ siteTitle, color }) => (
 		<LinkContainer>
 			<Link to='/about'>About</Link>
 		</LinkContainer>
-		<LinkContainer>
-			<Link to='/services'>Services</Link>
-		</LinkContainer>
 		<LogoWrapper to='/'>
 			<Logo color={color} />
 		</LogoWrapper>
-		<LinkContainer>
-			<Link to='/projects'>Projects</Link>
-		</LinkContainer>
 		<LinkContainer>
 			<Link to='/contact'>Contact</Link>
 		</LinkContainer>
@@ -28,7 +22,7 @@ const Header = ({ siteTitle, color }) => (
 const HeaderWrapper = styled.header`
 	justify-self: flex-start;
 	display: grid;
-	grid-template-columns: repeat(5, fit-content(25ch));
+	grid-template-columns: repeat(3, fit-content(25ch));
 	grid-gap: 5vw;
 	justify-content: center;
 	width: 80%;

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import MockPage from '../components/mockPage/mockPage'
 import SEO from '../components/seo'
 import {
 	Button,
@@ -11,6 +10,7 @@ import {
 	AsideThrow,
 } from '../components/pageComponents'
 import { graphql, useStaticQuery } from 'gatsby'
+import Polaroid from '../components/polaroid'
 
 const IndexPage = () => {
 	const data = useStaticQuery(graphql`
@@ -19,6 +19,13 @@ const IndexPage = () => {
 				html
 				frontmatter {
 					color
+					image {
+						childImageSharp {
+							fluid(maxWidth: 500) {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
 				}
 			}
 		}
@@ -26,6 +33,7 @@ const IndexPage = () => {
 	const { markdownRemark } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
+	const fluid = markdownRemark.frontmatter.image.childImageSharp.fluid
 
 	return (
 		<Layout color={color}>
@@ -42,7 +50,7 @@ const IndexPage = () => {
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}
 				>
-					<MockPage color={color} />
+					<Polaroid fluid={fluid} />
 				</AsideThrow>
 			</Container>
 		</Layout>

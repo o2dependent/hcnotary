@@ -43,11 +43,8 @@ const AboutPage = () => {
 				<GridContainer>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
 					<ButtonGrid>
-						<Button color={color} to='/services'>
-							My services
-						</Button>
 						<Button color={color} to='/contact'>
-							Contact
+							Contact Me
 						</Button>
 					</ButtonGrid>
 				</GridContainer>
