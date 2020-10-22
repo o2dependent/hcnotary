@@ -6,4 +6,4 @@ image: ../../../static/img/received_352240812754032.jpeg
 ---
 # Welcome to HC Notary.
 
-Information that describes your business and what you can offer to potential clients. Other information can be added here if you like
+Information that describes your business and what you can offer to potential clients. Some other information.
