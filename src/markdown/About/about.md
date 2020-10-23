@@ -6,4 +6,4 @@ image: ../../../static/img/received_352240812754032.jpeg
 ---
 # About.
 
-Description about  you and your business.
+Description about  you and your business. About text.
