@@ -24,6 +24,8 @@ Basic, non loan related fee for a single notarization is $10 (WAC 308-30-220). P
 
 Travel fees are in addition to fees for notarial acts calculated on location. Base travel rate is $25. If the location is outside of Belfair, WA there is an additional $0.50 per mile. 
 
+If requested, I can provide you with a free no obligation quote.
+
 To be sensitive to scheduling needs, if I have to wait more than 15 minutes for a confirmed appointment, a $30 fee will be added.
 
 If I go to the confirmed appointment and the notarization is unable to proceed for any reason the travel fee will still be charged.
