@@ -6,4 +6,4 @@ image: ../../../static/img/received_352240812754032.jpeg
 ---
 # About.
 
-Description about  you and your business. About text.
+I am commissioned by Washington State, licensed, bonded and insured. Background screened with the National Notary Association. HIPAA compliance trained. Ongoing training to stay up to date with the latest information
