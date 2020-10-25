@@ -16,7 +16,7 @@ Certified Loan Signing Agent: National Notary Association
 
 National Notary Association member
 
-What type of identification do I need to have available? 
+What type of identification do I need to have available? Any of these:
 
 * A drivers license
 * A passport 
