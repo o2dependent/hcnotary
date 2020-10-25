@@ -18,6 +18,8 @@ What type of identification do I need to have available for my notary appointmen
 * A passport 
 * A government issued identification card
 
+***COVID-19 Protocol for appointments:*** masks and social distancing is encouraged. Supplies are disinfected prior to the appointment. Hand sanitizer will be available for use.
+
 ***Fees:***
 
 Basic, non loan related fee for a single notarization is $10 (WAC 308-30-220). Please note, this fee is *per person* signing.
