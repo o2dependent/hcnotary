@@ -18,7 +18,7 @@ What type of identification do I need to have available for my notary appointmen
 * A passport 
 * A government issued identification card
 
-***COVID-19 Protocol for appointments:*** masks and social distancing is encouraged. Supplies are disinfected prior to the appointment. Hand sanitizer will be available for use.
+***COVID-19 Protocol for appointments:*** Masks and social distancing is encouraged. Supplies are disinfected prior to the appointment. Hand sanitizer will be available for use.
 
 ***Fees:***
 
