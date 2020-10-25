@@ -31,3 +31,13 @@ If requested, I can provide you with a free no obligation quote.
 To be sensitive to scheduling needs, if I have to wait more than 15 minutes for a confirmed appointment, a $30 fee will be added.
 
 If I go to the confirmed appointment and the notarization is unable to proceed for any reason the travel fee will still be charged.
+
+***Hours:***
+
+* Monday 4:00 pm to 8:00 pm
+* Tuesday 4:00 pm to 8:00 pm
+* Wednesday 4:00 pm to 8:00 pm
+* Thursday 4:00 pm to 8:00 pm
+* Friday 4:00 pm to 8:00 pm
+* Saturday 6:00 am to 8:00 pm
+* Sunday 8:00 am to 6:00 pm
