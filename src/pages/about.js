@@ -49,7 +49,6 @@ const AboutPage = () => {
 					</ButtonGrid>
 				</GridContainer>
 				<AsideThrow
-					style={{ top: `5vh` }}
 					initial={{ y: `100vh`, rotate: -45 }}
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}

@@ -109,12 +109,12 @@ const AsideThrow = styled(motion.div)`
 	height: 100%;
 	width: 100%;
 	@media only screen and (max-width: 768px) {
-		width: 116%;
+		width: 90%;
 		height: 90%;
 		max-height: 90%;
-		position: absolute;
-		top: 0;
-		left: -8%;
+		position: fixed;
+		top: 20vh;
+		left: 5%;
 		opacity: 0.2;
 		grid-template-rows: 1fr 1fr;
 	}

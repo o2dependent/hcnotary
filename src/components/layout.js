@@ -8,7 +8,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-
 import Header from './header'
 import './layout.css'
 import styled from 'styled-components'
@@ -45,11 +44,11 @@ Layout.propTypes = {
 }
 
 const Footer = styled.footer`
-	position: absolute;
+	position: sticky;
 	bottom: 0;
-	right: 50%;
-	transform: translateX(50%);
+	text-align: center;
 	opacity: 0.5;
+	width: 100%;
 `
 
 const LayoutWrapper = styled.div`
