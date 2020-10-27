@@ -20,6 +20,7 @@ export default function Polaroid({ fluid, fixed, title, color, about }) {
 
 const Frame = styled(motion.div)`
 	width: ${props => (props.title ? '100%' : '80%')};
+	position: relative;
 	height: fit-content;
 	padding: 2vmin;
 	padding-bottom: ${props => (props.title ? '10%' : '20%')};
@@ -34,7 +35,7 @@ const TopRight = styled.div`
 	position: absolute;
 	top: 0;
 	right: 0;
-	transform: translate(-50%, -40%) rotate(15deg);
+	transform: translate(50%, -50%) rotate(15deg);
 `
 
 const Title = styled.p`
