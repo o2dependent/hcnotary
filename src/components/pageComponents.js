@@ -115,7 +115,7 @@ const AsideThrow = styled(motion.div)`
 		position: fixed;
 		top: 20vh;
 		left: 5%;
-		opacity: 0.2;
+		opacity: 0.1;
 		grid-template-rows: 1fr 1fr;
 	}
 `

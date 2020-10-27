@@ -3,7 +3,6 @@ import Img from 'gatsby-image'
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../helpers/colors'
-import { ButtonA, ButtonGrid } from './pageComponents'
 
 export default function Polaroid({ fluid, fixed, title, color, about }) {
 	return (
@@ -38,20 +37,7 @@ const TopRight = styled.div`
 	transform: translate(40%, -40%) rotate(15deg);
 `
 
-const Title = styled.p`
-	width: 100%;
-	font-weight: 500;
-`
-
-const TitleContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	height: 3rem;
-	width: 100%;
-`
-
 const ImageWrapper = styled.div`
-	position: relative;
 	width: 100%;
 	height: fit-content;
 	&::before {
