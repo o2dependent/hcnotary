@@ -5,27 +5,15 @@ import styled from 'styled-components'
 import colors from '../helpers/colors'
 import { ButtonA, ButtonGrid } from './pageComponents'
 
-export default function Polaroid({ fluid, title, linkTo, gitHub, color }) {
+export default function Polaroid({ fluid, fixed, title, color, about }) {
 	return (
 		<Frame title={title}>
 			<Image fluid={fluid} />
-			{title ? (
-				<TitleContainer>
-					{title ? <Title>{title}</Title> : null}
-					<ButtonGrid>
-						{linkTo ? (
-							<ButtonA href={linkTo} color={color}>
-								Check it
-							</ButtonA>
-						) : null}
-						{gitHub ? (
-							<ButtonA href={gitHub} color={color}>
-								GitHub
-							</ButtonA>
-						) : null}
-					</ButtonGrid>
-				</TitleContainer>
-			) : null}
+			{fixed && (
+				<TopRight>
+					<Img fixed={fixed} />
+				</TopRight>
+			)}
 		</Frame>
 	)
 }
@@ -40,6 +28,13 @@ const Frame = styled(motion.div)`
 	@media only screen and (max-width: 768px) {
 		width: 100%;
 	}
+`
+
+const TopRight = styled.div`
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(-50%, -40%) rotate(15deg);
 `
 
 const Title = styled.p`

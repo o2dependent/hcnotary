@@ -11,6 +11,7 @@ import {
 	AsideThrow,
 } from '../components/pageComponents'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import Polaroid from '../components/polaroid'
 
 const AboutPage = () => {
@@ -29,12 +30,20 @@ const AboutPage = () => {
 					}
 				}
 			}
+			file(relativePath: { regex: "/LBI.png/" }) {
+				childImageSharp {
+					fixed(width: 125, height: 125) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
 		}
 	`)
-	const { markdownRemark } = data
+	const { markdownRemark, file } = data
 	const { html } = markdownRemark
 	const color = markdownRemark.frontmatter.color
 	const fluid = markdownRemark.frontmatter.image.childImageSharp.fluid
+	const LBIfixed = file.childImageSharp.fixed
 
 	return (
 		<Layout color={color}>
@@ -53,7 +62,7 @@ const AboutPage = () => {
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}
 				>
-					<Polaroid fluid={fluid} />
+					<Polaroid fluid={fluid} fixed={LBIfixed} />
 				</AsideThrow>
 			</Container>
 		</Layout>
