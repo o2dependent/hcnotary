@@ -35,7 +35,7 @@ const TopRight = styled.div`
 	position: absolute;
 	top: 0;
 	right: 0;
-	transform: translate(50%, -50%) rotate(15deg);
+	transform: translate(40%, -40%) rotate(15deg);
 `
 
 const Title = styled.p`
