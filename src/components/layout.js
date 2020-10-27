@@ -44,8 +44,6 @@ Layout.propTypes = {
 }
 
 const Footer = styled.footer`
-	position: sticky;
-	bottom: 0;
 	text-align: center;
 	opacity: 0.5;
 	width: 100%;
@@ -59,7 +57,6 @@ const LayoutWrapper = styled.div`
 	height: 100%;
 	min-height: 100vh;
 	background: ${props => props.background};
-	overflow: hidden;
 	box-sizing: border-box;
 	& * {
 		color: ${colors.white};

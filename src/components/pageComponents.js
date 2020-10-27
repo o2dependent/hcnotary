@@ -106,8 +106,10 @@ const ButtonGrid = styled.div`
 `
 
 const AsideThrow = styled(motion.div)`
-	height: 100%;
+	height: fit-content;
 	width: 100%;
+	position: sticky;
+	top: 10vh;
 	@media only screen and (max-width: 768px) {
 		width: 90%;
 		height: 90%;
