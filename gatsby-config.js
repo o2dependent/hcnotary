@@ -62,8 +62,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `Gatsby Blog`,
-				short_name: `Blog`,
+				name: `HC Notary`,
+				short_name: `HC Notary`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,

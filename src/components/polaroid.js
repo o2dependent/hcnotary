@@ -4,15 +4,10 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../helpers/colors'
 
-export default function Polaroid({ fluid, fixed, title, color, about }) {
+export default function Polaroid({ fluid, title, color, about }) {
 	return (
 		<Frame title={title}>
 			<Image fluid={fluid} />
-			{fixed && (
-				<TopRight>
-					<Img fixed={fixed} />
-				</TopRight>
-			)}
 		</Frame>
 	)
 }
@@ -28,13 +23,6 @@ const Frame = styled(motion.div)`
 	@media only screen and (max-width: 768px) {
 		width: 100%;
 	}
-`
-
-const TopRight = styled.div`
-	position: absolute;
-	top: 0;
-	right: 0;
-	transform: translate(40%, -40%) rotate(15deg);
 `
 
 const ImageWrapper = styled.div`

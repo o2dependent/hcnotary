@@ -19,6 +19,14 @@ const Container = styled.div`
 	}
 `
 
+const BadgeContainer = styled.div`
+	width: 100%;
+	margin-bottom: 15px;
+	height: fit-content;
+	display: flex;
+	columns: 3;
+`
+
 const GridContainer = styled(motion.div)`
 	height: 100%;
 	width: 100%;
@@ -130,4 +138,5 @@ export {
 	Content,
 	ButtonGrid,
 	AsideThrow,
+	BadgeContainer,
 }

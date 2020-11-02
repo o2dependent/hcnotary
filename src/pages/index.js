@@ -8,7 +8,9 @@ import {
 	GridContainer,
 	Container,
 	AsideThrow,
+	BadgeContainer,
 } from '../components/pageComponents'
+import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import Polaroid from '../components/polaroid'
 
@@ -26,22 +28,22 @@ const IndexPage = () => {
 							}
 						}
 					}
-				}
-			}
-			file(relativePath: { regex: "/LBI.png/" }) {
-				childImageSharp {
-					fixed(width: 125, height: 125) {
-						...GatsbyImageSharpFixed
+					badges {
+						image {
+							childImageSharp {
+								fixed(width: 125, height: 125) {
+									...GatsbyImageSharpFixed
+								}
+							}
+						}
 					}
 				}
 			}
 		}
 	`)
 	const { markdownRemark, file } = data
-	const { html } = markdownRemark
-	const color = markdownRemark.frontmatter.color
-	const fluid = markdownRemark.frontmatter.image.childImageSharp.fluid
-	const fixed = file.childImageSharp.fixed
+	const { html, frontmatter } = markdownRemark
+	const { color, badges } = frontmatter
 
 	return (
 		<Layout color={color}>
@@ -49,6 +51,11 @@ const IndexPage = () => {
 			<Container>
 				<GridContainer>
 					<Content dangerouslySetInnerHTML={{ __html: html }} />
+					<BadgeContainer>
+						{badges.map(b => (
+							<Img fixed={b.image.childImageSharp.fixed} />
+						))}
+					</BadgeContainer>
 					<Button color={color} to='/about'>
 						About Me
 					</Button>
@@ -58,7 +65,7 @@ const IndexPage = () => {
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}
 				>
-					<Polaroid fluid={fluid} fixed={fixed} />
+					<Polaroid />
 				</AsideThrow>
 			</Container>
 		</Layout>

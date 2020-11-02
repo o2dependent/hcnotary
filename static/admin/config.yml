@@ -16,6 +16,12 @@ collections:
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
       - { label: Image, name: image, widget: image }
+      - name: Badges
+        label: badges
+        create: true
+        widget: list
+        fields:
+          - { label: Image, name: image, widget: image }
   - name: about
     label: About
     folder: src/markdown/About
