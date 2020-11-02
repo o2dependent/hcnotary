@@ -24,6 +24,7 @@ const BadgeContainer = styled.div`
 	margin-bottom: 15px;
 	height: fit-content;
 	display: flex;
+	flex-wrap: wrap;
 	columns: 3;
 `
 
