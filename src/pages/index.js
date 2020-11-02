@@ -23,7 +23,7 @@ const IndexPage = () => {
 					color
 					image {
 						childImageSharp {
-							fluid(maxWidth: 500) {
+							fluid(maxWidth: 1000, quality: 100) {
 								...GatsbyImageSharpFluid
 							}
 						}
@@ -43,7 +43,7 @@ const IndexPage = () => {
 	`)
 	const { markdownRemark, file } = data
 	const { html, frontmatter } = markdownRemark
-	const { color, badges } = frontmatter
+	const { color, badges, image } = frontmatter
 
 	return (
 		<Layout color={color}>
@@ -65,7 +65,7 @@ const IndexPage = () => {
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}
 				>
-					<Polaroid />
+					<Polaroid fluid={image.childImageSharp.fluid} />
 				</AsideThrow>
 			</Container>
 		</Layout>

@@ -31,9 +31,9 @@ const AboutPage = () => {
 			}
 		}
 	`)
-	const { markdownRemark, file } = data
-	const { html } = markdownRemark
-	const color = markdownRemark.frontmatter.color
+	const { markdownRemark } = data
+	const { html, frontmatter } = markdownRemark
+	const { color, image } = frontmatter
 
 	return (
 		<Layout color={color}>
@@ -52,7 +52,7 @@ const AboutPage = () => {
 					animate={{ y: 0, rotate: 0 }}
 					transition={{ stiffness: 50, type: 'spring' }}
 				>
-					<Polaroid />
+					<Polaroid fluid={image.childImageSharp.fluid} />
 				</AsideThrow>
 			</Container>
 		</Layout>
