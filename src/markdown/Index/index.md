@@ -5,6 +5,8 @@ color: '#8F81E8'
 image: ../../../static/img/20201018_174337-1-.jpg
 badges:
   - image: ../../../static/img/LBI.png
+Badges:
+  - image: ../../../static/img/NNA.png
 ---
 
 # Welcome to Hood Canal Mobile Notary Services, LLC
