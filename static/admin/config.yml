@@ -16,8 +16,8 @@ collections:
       - { label: Color, name: color, widget: string }
       - { label: Body, name: body, widget: markdown }
       - { label: Image, name: image, widget: image }
-      - name: Badges
-        label: badges
+      - name: badges
+        label: Badges
         create: true
         widget: list
         fields:
