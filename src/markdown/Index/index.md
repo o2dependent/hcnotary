@@ -1,10 +1,12 @@
 ---
 title: Index Content
 page: index
-color: '#8F81E8'
+color: "#8F81E8"
 image: ../../../static/img/received_352240812754032.jpeg
 badges:
   - image: ../../../static/img/LBI.png
+Badges:
+  - image: ../../../static/img/NNA.png
 ---
 
 # Welcome to Hood Canal Mobile Notary Services, LLC
